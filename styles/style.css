@@ -9,6 +9,16 @@
     scroll-behavior: smooth;
 }
 
+/* Applying a linear gradient to the background */
+.head {
+    margin: 0;
+    height: 100vh;
+    /* Ensures the body takes up the full viewport height */
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    /* Gradient from pinkish to orange */
+}
+
+
 /* Custom Scroll Bar CSS */
 ::-webkit-scrollbar {
     width: 10px;
@@ -295,6 +305,7 @@ section .button button:hover {
 }
 
 /* My Skills CSS */
+
 .skills {
     background: #f0f8ff;
 }
@@ -358,6 +369,78 @@ section .button button:hover {
     font-size: 60px;
     color: #4070f4;
 }
+
+
+/* my projects */
+#projects {
+    padding: 50px 20px;
+    background-color: #f3f4f6;
+}
+
+
+
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-10px);
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.project:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 20px;
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.project-info h3 {
+    font-size: 1.8em;
+    margin: 10px 0;
+    color: #007BFF;
+}
+
+.project-info p {
+    font-size: 1em;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.project-info a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    border: 2px solid #007BFF;
+    padding: 10px 20px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.project-info a:hover {
+    background-color: #007BFF;
+    color: #fff;
+}
+
 
 /* My Services CSS */
 .services .boxes {
