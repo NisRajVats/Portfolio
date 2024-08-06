@@ -136,10 +136,22 @@ nav.sticky .menu-btn {
     color: #fff;
 }
 
+.sidepng {
+    width: 50%;
+    float: right;
+    height: 100px;
+    padding: 100px; /* Optional: Add some space between the image and the content */
+}
+
+.pngimage {
+    height: 600px; /* Ensure the image matches the height of the container */
+    align-items: center;
+}
+
 /* home section styling */
 .home {
     height: 100vh;
-    width: 100%;
+    width: 50%;
     background: url("images/background.png") no-repeat;
     background-size: cover;
     background-position: center;
@@ -151,6 +163,7 @@ nav.sticky .menu-btn {
     width: 90%;
     height: 100%;
     margin: auto;
+    margin-left: 9%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -307,7 +320,7 @@ section .button button:hover {
 /* My Skills CSS */
 
 .skills {
-    background: #f0f8ff;
+    background: linear-gradient(135deg, #fddb92, #d1fdff);
 }
 
 .skills .content {
@@ -375,27 +388,29 @@ section .button button:hover {
 #projects {
     padding: 50px 20px;
     background-color: #f3f4f6;
+    background-image: linear-gradient(to bottom right, #f3f4f6, #e2e5ec);
 }
-
-
 
 .project-list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Increased min-width */
     gap: 30px;
 }
 
 .project {
-    background-color: #fff;
+    background: linear-gradient(to bottom right, #38A2D7, #561139); /* Gradient background */
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transform: translateY(0);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px; /* Increased padding for larger content area */
+    min-height: 300px; /* Set a minimum height to ensure consistency */
 }
 
 .project:hover {
     transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-image img {
@@ -411,34 +426,42 @@ section .button button:hover {
 .project-info {
     padding: 20px;
     text-align: center;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .project-info h3 {
     font-size: 1.8em;
     margin: 10px 0;
-    color: #007BFF;
+    color: #ffffff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .project-info p {
     font-size: 1em;
-    margin-bottom: 15px;
-    color: #555;
+    margin-bottom: 35px;
+    color: #ffffff;
 }
 
 .project-info a {
-    color: #007BFF;
+    color: #faf8fa;
     text-decoration: none;
     font-weight: bold;
-    border: 2px solid #007BFF;
+    background-image: linear-gradient(to bottom right, #FF3E9D, #0E1F40);
     padding: 10px 20px;
     border-radius: 6px;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+    background-color: #fff;
 }
 
 .project-info a:hover {
-    background-color: #007BFF;
+    background-image: linear-gradient(to bottom right, #FF3E9D, #0E1F40);
     color: #fff;
+    border-color: #0056b3;
+}
+
+.project-info a:active {
+    background-color: #0056b3;
+    border-color: #003f7f;
 }
 
 
