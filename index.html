@@ -5,13 +5,16 @@
 <head>
     <meta charset="UTF-8" />
     <title>Responsive Portfolio Website HTML CSS| CodingNepal</title>
-    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body> 
+    
+
+
     <header class="head">
         <!-- Move to up button -->
         <div class="scroll-button">
@@ -57,29 +60,31 @@
             
         </nav>
 
-        <div class="sidepng">
-            <img src="Images/sidepngimg.png" alt="" class="pngimage">
-        </div>
+
 
         <!-- Home Section Start -->
-        <section class="home" id="home">
-            <div class="home-content">
-                <div class="text">
-                    <div class="text-one">Hello,</div>
-                    <div class="text-two">I'm Nishant </div>
-                    <div class="text-three">Frontend-Developer</div>
-                    <div class="text-four">From Haryana </div>
-                </div>
-                <div class="button">
-                    <a href="https://www.linkedin.com/in/nishantrajput393/">
-                        <button>Hire Me</button>
-                    </a>
-                </div>
+        <section class="front">
+            <img src="Images/uxdesign.png" alt="" class="UXdesign">
 
+            <div class="sidepng">
+                <img src="Images/manpng.webp" alt="">
             </div>
-        </section>
-    </header>     
+            <div class="front-text">
+                <h1 class="front-heading">TURNING VISION INTO REALITY WITH <span class="sp1">CODE</span> AND <span class="sp1">DESIGN</span></h1>
+                <p class="front-para">Hi, I’m Nishant, a web developer with a passion for turning ideas into visually stunning and highly functional websites. My expertise lies in crafting sleek, modern designs and building intuitive, powerful functionality tailored to your needs. If you’re looking for a dedicated professional to bring your vision to life, explore my portfolio and see the quality of my work. Ready to create something exceptional together? Contact me today to discuss your project and get started!</p>
+                <div>
+                    <a href="https://www.linkedin.com/in/nishant-rajput-555834230/" class="button">Let's Talk..</a>
 
+                    <a href="https://github.com/NisRajVats">GitHub-></a>
+                </div>
+            </div>
+            <img src="Images/bulb1.png" alt="" class="bulb">
+
+        </section>
+    </header>    
+    
+    
+    
     <!-- About Section Start -->
     <section class="about" id="about">
         <div class="content">
@@ -91,13 +96,7 @@
                 <div class="right">
                     <div class="topic">Designing Is My Passion</div>
                     <p>
-                        Hello! I'm Nishant, a dynamic front-end web developer on a mission to create stunning,
-                        user-friendly web experiences. Currently diving deep into a BTech in Computer Science at SRM
-                        University, I bring over 5 years of coding expertise to the table. My toolkit includes HTML,
-                        CSS, Java for sleek app development, Python for AI innovation, and MySQL for robust cloud
-                        solutions. With a solid grasp of advanced C, C++, and Python, I'm also exploring the MERN stack
-                        to become a full-stack powerhouse. Join me on this exciting journey as I blend creativity and
-                        technology to craft the future of the web!
+                        I’m a frontend web developer with 5 years of experience and a student at SRM University. My expertise spans HTML, CSS, Tailwind Framework, JavaScript, and PHP, enabling me to craft visually stunning and responsive web interfaces. I’m passionate about merging creativity with technology to build engaging digital experiences. Currently, I’m expanding my skill set by exploring the MERN stack, aiming to become a full-stack powerhouse. Join me on this exciting journey as I blend innovative design with cutting-edge technology to shape the future of the web and deliver impactful, modern solutions.
                     </p>
                     <div class="button">
                         <a href="images/rem1.pdf" download>
@@ -117,9 +116,7 @@
             <div class="skills-details">
                 <div class="text">
                     <div class="topic">Skills Reflects Our Knowledge</div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minus natus tenetur tempora? Quasi, rem
-                        quas omnis. Porro rem aspernatur reiciendis ut praesentium minima ad, quos, officia! Illo
-                        libero, et, distinctio repellat sed nesciunt est modi quaerat placeat. Quod molestiae, alias?
+                    <p>My skills embody a deep understanding of modern web development. From crafting dynamic front-end interfaces to delving into full-stack solutions, each capability demonstrates my dedication to continuous learning and my commitment to delivering exceptional, cutting-edge web experiences.
                     </p>
                     <div class="experience">
                         <div class="num">5</div>
@@ -152,34 +149,39 @@
     </section>
     <!-- My projects -->
 
-    <section id="projects">
-        <h2 class="title"><span>My Projects</span></h2>
-        <div class="project-list">
-            <div class="project">
-                <div class="project-image">
-                    <img src="Images/pr2.png" alt="Project Image 1">
-                </div>
-                <div class="project-info">
-                    <h3>PIXELCUT</h3>
-                    <p>This is a responsive website for 
-                        removing backgrounf the images ..
-                    </p>
-                    <a href="https://nisrajvats.github.io/A-Responsive-website-/" target="_blank">View Project</a>
-                </div>
+    <section class="fascilities">
+        <div class="title"><span>My Projects</span></div>
+        <div class="row">
+            <div class="fascilities-col">
+                <a href="https://nisrajvats.github.io/octanet-aug-Landing/"><img src="images/web1.png" alt=""></a>
+                <h3>OCTANET AUG</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga in eius asperiores voluptatibus maxime
+                    laborum minima quibusdam, architecto perspiciatis a porro, et facilis repellat similique impedit
+                    labore molestias aspernatur illo incidunt? Quae, cum? Illo distinctio nulla atque odio sint?
+                    Architecto iure saepe veniam, doloremque voluptatem soluta iusto officia quasi! Similique?
+                </p>
             </div>
-            <div class="project">
-                <div class="project-image">
-                    <img src="Images/pr1.png" alt="Project Image 2">
-                </div>
-                <div class="project-info">
-                    <h3>SRM UNIVERSITY</h3>
-                    <p>This is a practice sample website 
-                        of SRM UNIVERSITY ..
-                    </p>
-                    <a href="https://nisrajvats.github.io/University-Responsive-web/" target="_blank">View Project</a>
-                </div>
+            <div class="fascilities-col">
+                <a href="#"><img src="images/web3.png" alt=""></a>
+                <h3>PIXELCUT CLONE</h3>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit earum quo exercitationem. Illum,
+                    inventore esse? Assumenda, debitis nisi. Atque nostrum quo facilis voluptate impedit corrupti?
+                    Natus, adipisci. Animi quas debitis exercitationem doloremque repellat, inventore sint velit laborum
+                    ex hic? Consequatur dolorum quaerat ipsa tempora numquam molestiae quos architecto nemo sit.
+                </p>
             </div>
-            <!-- Add more projects as needed -->
+            <div class="fascilities-col">
+                <a href="https://nisrajvats.github.io/University-Responsive-web/"><img src="images/web2.png" alt=""></a>
+                <h3>UNIVERSITY </h3>
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos suscipit veniam non tenetur
+                    reprehenderit corporis esse voluptatum. Officiis fugit expedita, modi adipisci aliquam repellendus,
+                    porro asperiores aut, eius accusantium molestiae nulla cupiditate ipsa perferendis deleniti dolorem
+                    tenetur itaque labore necessitatibus suscipit. Ex eaque saepe laboriosam placeat nulla nobis ratione
+                    officiis.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -187,67 +189,55 @@
 
     <!-- My Services Section Start -->
     <section class="services" id="services">
+        
         <div class="content">
             <div class="title"><span>My Services</span></div>
             <div class="boxes">
                 <div class="box">
+                    
+                    
+
                     <div class="icon">
                         <i class="fas fa-desktop"></i>
                     </div>
-                    <div class="topic">Front-End Web Development</div>
-                    <p>I craft responsive and engaging websites using HTML, CSS, and JavaScript. My focus is on creating
-                        visually appealing designs that deliver a seamless user experience across all devices. By
-                        incorporating modern design trends and best practices, I ensure that your website stands out and
-                        effectively represents your brand.</p>
+                    <div class="topic">Custom Web Design</div>
+                    <p>I design and develop custom websites tailored to your brand’s identity and goals. Using HTML, CSS, and the Tailwind Framework, I create visually stunning and responsive websites that ensure a seamless experience across all devices and screen sizes.</p>
                 </div>
                 <div class="box">
                     <div class="icon">
                         <i class="fas fa-paint-brush"></i>
                     </div>
-                    <div class="topic">App Development</div>
-                    <p>I specialize in developing high-performance Android applications using Java. From concept to
-                        deployment, I create apps with user-friendly interfaces and robust functionality. My goal is to
-                        deliver apps that not only meet your requirements but also provide an exceptional user
-                        experience.</p>
+                    <div class="topic">UI/UX Design</div>
+                    <p>I specialize in crafting intuitive and engaging user interfaces that prioritize both aesthetics and functionality. My focus is on creating user-centric designs that not only look great but also provide an exceptional user experience, making your website easy to navigate and enjoyable to use.</p>
                 </div>
                 <div class="box">
                     <div class="icon">
                         <i class="fas fa-chart-line"></i>
                     </div>
-                    <div class="topic">Python for AI and Machine Learning</div>
-                    <p>I develop AI models and machine learning solutions using Python to tackle complex problems. My
-                        services include data analysis, model building, and implementation of machine learning
-                        algorithms. I aim to deliver insights and solutions that drive informed decision-making.
-
-                    </p>
+                    <div class="topic">Cross-Browser Compatibility</div>
+                    <p>Ensure your website delivers a consistent experience across all browsers and devices. I’ll test and optimize your site for cross-browser compatibility, so your content looks and functions perfectly, whether accessed from Chrome, Firefox, Safari, or any other browser.</p>
                 </div>
                 <div class="box">
                     <div class="icon">
                         <i class="fab fa-android"></i>
                     </div>
-                    <div class="topic">Cloud Computing Solutions</div>
-                    <p>I provide cloud computing services, including the setup and management of cloud infrastructure.
-                        My focus is on optimizing performance, ensuring security, and managing resources efficiently. I
-                        help you transition to the cloud smoothly while maintaining compliance with industry standards.
+                    <div class="topic">Consultation and Strategy</div>
+                    <p>Get expert guidance on web development strategies and technology choices with my consultation services. I’ll help you navigate the best practices and technology stack options to achieve your project goals, offering tailored advice to set you up for success.
                     </p>
                 </div>
                 <div class="box">
                     <div class="icon">
                         <i class="fas fa-camera-retro"></i>
                     </div>
-                    <div class="topic">Database Management</div>
-                    <p>I offer expert database management services with MySQL to ensure your data is well-organized and
-                        secure. I design efficient schemas, manage data integrity, and optimize performance to support
-                        your business needs. My solutions ensure reliable data storage and quick access.</p>
+                    <div class="topic">Web Application Maintenance</div>
+                    <p>Keep your website running smoothly with my ongoing maintenance services. I provide regular updates, performance checks, and security enhancements to ensure your site remains current, functional, and protected against potential issues.</p>
                 </div>
                 <div class="box">
                     <div class="icon">
                         <i class="fas fa-tablet-alt"></i>
                     </div>
-                    <div class="topic">Full Stack Development (MERN Stack)</div>
-                    <p>As a full-stack developer with expertise in the MERN stack, I build complete web applications
-                        from scratch. I handle both front-end and back-end development, integrating MongoDB, Express.js,
-                        React.js, and Node.js to create efficient and scalable solutions tailored to your needs.</p>
+                    <div class="topic">Website Optimization</div>
+                    <p>Optimize your website’s performance with my comprehensive optimization services. I’ll ensure your site loads quickly, runs efficiently, and provides a smooth experience for users by implementing best practices in responsive design and code optimization.</p>
                 </div>
             </div>
         </div>

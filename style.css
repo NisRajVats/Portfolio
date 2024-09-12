@@ -1,0 +1,880 @@
+/* Google Font CDN Links */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+
+
+
+.head {
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    background: url('Images/back1.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.gradient-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Adjust for the overlay effect */
+    z-index: 1; /* Ensure it's above the video but below other content */
+}
+
+
+.head {
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    background: url('Images/back1.jpg') no-repeat center center;
+    background-size: cover;
+}
+
+.head::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.066), rgba(0, 0, 0, 0.086));
+    backdrop-filter: blur(5px);
+    z-index: 1;
+}
+
+.head>* {
+    position: relative;
+    z-index: 2;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #6e93f7;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4070f4;
+}
+
+nav {
+    width: 100%;
+    padding: 20px 0;
+    z-index: 998;
+    transition: all 0.3s ease;
+    font-family: "Ubuntu", sans-serif;
+}
+
+nav.sticky {
+    background: #4070f4;
+    padding: 13px 0;
+}
+
+nav .navbar {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
+}
+
+nav .navbar .logo a {
+    font-weight: 500;
+    font-size: 35px;
+    color: #4070f4;
+}
+
+nav.sticky .navbar .logo a {
+    color: #fff;
+}
+
+nav .navbar .menu {
+    display: flex;
+    position: relative;
+}
+
+nav .navbar .menu li {
+    list-style: none;
+    margin: 0 8px;
+}
+
+.navbar .menu a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+    padding: 6px 0;
+    transition: all 0.4s ease;
+}
+
+.navbar .menu a:hover {
+    color: #4070f4;
+}
+
+nav.sticky .menu a {
+    color: #fff;
+}
+
+nav.sticky .menu a:hover {
+    color: #0e2431;
+}
+
+.navbar .media-icons a {
+    color: #4070f4;
+    font-size: 18px;
+    margin: 0 6px;
+}
+
+nav.sticky .media-icons a {
+    color: #fff;
+}
+
+nav .menu-btn,
+.navbar .menu .cancel-btn {
+    position: absolute;
+    color: #fff;
+    right: 30px;
+    top: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: none;
+}
+
+nav .menu-btn {
+    color: #4070f4;
+}
+
+nav.sticky .menu-btn {
+    color: #fff;
+}
+
+.navbar .menu .menu-btn {
+    color: #fff;
+}
+
+.front {
+    display: flex;
+    font-family: "Nunito";
+}
+
+.sidepng {
+    width: 50%;
+    margin-left: 7%;
+}
+
+.front-text {
+    margin: 8% auto;
+    margin-top: 5%;
+    font-family: "Ubuntu", sans-serif;
+    position: relative;
+    max-width: 1200px;
+    padding: 0 2%;
+}
+
+.front-text .front-heading {
+    font-size: 3rem;
+    color: #333333;
+    margin-bottom: 1rem;
+}
+
+.sp1 {
+    color: #007BFF;
+}
+
+.front-text .front-para {
+    padding: 1.5rem;
+    padding-left: 0;
+    font-size: 1.12rem;
+    color: #444444;
+    line-height: 1.6;
+}
+
+.front-text .button {
+    margin: 10px 0;
+    outline: none;
+    padding: 10px 20px;
+    border-radius: 40px;
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.5);
+    font-size: 1rem;
+    font-weight: 400;
+    background: #16046e;
+    color: #fff;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.4s ease;
+}
+
+.front-text .button:hover {
+    background: #1a1a8d;
+    box-shadow: 0 6px 12px rgba(0, 0, 255, 0.6);
+}
+
+.front-text .button:active {
+    background: #0e0e4a;
+    box-shadow: 0 2px 4px rgba(0, 0, 255, 0.4);
+}
+
+.front-text a {
+    font-family: "Poppins", sans-serif;
+    font-size: 1rem;
+    padding-left: 1.5%;
+    color: #007BFF;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.front-text a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+    transform: translateX(5px);
+}
+
+.front-text a:focus {
+    outline: 2px solid #007BFF;
+    outline-offset: 4px;
+}
+
+.front-text a:active {
+    color: #004085;
+    transform: translateX(2px);
+}
+
+
+.bulb {
+    position: absolute;
+    height: 150px;
+    right: 0;
+    bottom: 0;
+
+}
+
+.UXdesign {
+    position: absolute;
+    height: 150px;
+    left: 0;
+    bottom: 0;
+
+}
+
+
+
+/* About Section Styling */
+/* Those Elements Where We Have Apply Same CSS,
+ I'm Selecting Directly 'Section Tag' and 'Class'  */
+section {
+    padding-top: 40px;
+}
+
+section .content {
+    width: 80%;
+    margin: 40px auto;
+    font-family: "Poppins", sans-serif;
+}
+
+.about .about-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+section .title {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+section .title span {
+    color: #0e2431;
+    font-size: 2rem;
+    /* Updated font size for better readability */
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+section .title span::before,
+section .title span::after {
+    content: "";
+    position: absolute;
+    height: 3px;
+    background: #4070f4;
+    left: 0;
+    bottom: 0;
+}
+
+section .title span::after {
+    width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.about .about-details .left {
+    width: 45%;
+}
+
+.about .left img {
+    height: 400px;
+    width: 100%;
+    /* Ensure responsiveness */
+    max-width: 400px;
+    /* Maintain the max width */
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Added shadow for depth */
+}
+
+.about-details .right {
+    width: 55%;
+}
+
+section .topic {
+    color: #0e2431;
+    font-size: 1.5rem;
+    /* Updated font size for consistency */
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.about-details .right p {
+    text-align: justify;
+    color: #444444;
+    /* Slightly lighter for better readability */
+    line-height: 1.6;
+    /* Improved line spacing */
+}
+
+section .button {
+    margin: 16px 0;
+
+}
+
+section .button button {
+    outline: none;
+    padding: 12px 24px;
+    /* Increased padding for better click area */
+    border-radius: 18px;
+    font-size: 1rem;
+    /* Standardized font size */
+    font-weight: 500;
+    /* Slightly bolder font weight */
+    background: #4070f4;
+    color: #fff;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    /* Slightly faster transition */
+}
+
+section .button button:hover {
+    background-color: #fff;
+    color: #4070f4;
+    border-color: #4070f4;
+    transform: translateY(-2px);
+    /* Slight lift effect on hover */
+}
+
+section .button button:active {
+    background-color: #0056b3;
+    /* Darker background on click */
+    color: #fff;
+    border-color: #0056b3;
+    transform: translateY(0);
+    /* Remove lift effect on click */
+}
+
+
+/* My Skills CSS */
+
+.skills {
+    background-image: linear-gradient(to right, #a8caba 0%, #5d4157 100%);
+}
+
+.skills .content {
+    padding: 40px 0;
+}
+
+.skills .skills-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skills-details .text {
+    width: 50%;
+}
+
+.skills-details p {
+    color: #0e2431;
+    text-align: justify;
+}
+
+.skills .skills-details .experience {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.skills-details .experience .num {
+    color: #0e2431;
+    font-size: 80px;
+}
+
+.skills-details .experience .exp {
+    color: #0e2431;
+    margin-left: 20px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 6px;
+}
+
+.skills-details .boxes {
+    width: 45%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.skills-details .box {
+    width: calc(100% / 2 - 20px);
+    margin: 20px 0;
+}
+
+.skills-details .boxes .topic {
+    font-size: 20px;
+    color: #27469a;
+}
+
+.skills-details .boxes .per {
+    font-size: 60px;
+    color: #27469a;
+
+}
+
+
+/* My Projects */
+
+/* Style for the section */
+/* Style for the section */
+.fascilities {
+    padding: 60px 20px;
+    /* Padding around the section */
+    text-align: center;
+    /* Center text alignment */
+
+}
+
+/* Style for the heading */
+.fascilities h1 {
+    font-size: 2.8em;
+    /* Large font size */
+    margin-bottom: 20px;
+    /* Space below the heading */
+    text-decoration: underline;
+    /* Underline the heading */
+    color: #2c3e50;
+    /* Dark blue-grey color for the heading */
+    font-family: 'Arial', sans-serif;
+    /* Font style */
+}
+
+/* Style for the paragraph */
+.fascilities p {
+    font-size: 1.1em;
+    /* Slightly larger font size */
+    line-height: 1.8;
+    /* Line height for readability */
+    color: #555;
+    /* Darker grey color for text */
+    margin-bottom: 40px;
+    /* Space below the paragraph */
+    max-width: 900px;
+    /* Maximum width of the text */
+    margin-left: auto;
+    /* Center horizontally */
+    margin-right: auto;
+    /* Center horizontally */
+    font-family: 'Georgia', serif;
+    /* Font style */
+}
+
+/* Container for rows */
+.row {
+    display: flex;
+    /* Flexbox for layout */
+    flex-wrap: wrap;
+    /* Wrap columns to next line if needed */
+    gap: 30px;
+    /* Space between columns */
+    justify-content: center;
+    /* Center align columns */
+}
+
+/* Style for each column */
+/* Style for each column */
+.fascilities-col {
+    flex: 1 1 calc(33.333% - 30px);
+    /* 3 columns, adjust for gaps */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+    padding: 25px;
+    /* Padding inside each column */
+    border-radius: 12px;
+    /* Rounded corners */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    /* More prominent shadow */
+    text-align: left;
+    /* Left-align text in columns */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+/* Hover effect for columns */
+.fascilities-col:hover {
+    transform: translateY(-10px);
+    /* Slight lift effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow on hover */
+}
+
+/* Style for images */
+.fascilities-col img {
+    width: 100%;
+    /* Full width of the column */
+    height: auto;
+    /* Maintain aspect ratio */
+    border-radius: 8px;
+    /* Rounded corners for images */
+    margin-bottom: 20px;
+    /* Space below the image */
+    border: 2px solid #ddd;
+    /* Light grey border around images */
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    /* Smooth transition for scaling and border color */
+}
+
+/* Hover effect for images */
+.fascilities-col img:hover {
+    transform: scale(1.05);
+    /* Slightly increase the size of the image */
+    border-color: #3498db;
+    /* Change border color on hover */
+}
+
+
+/* Style for headings within columns */
+.fascilities-col h3 {
+    text-align: center;
+    color: rgb(172, 168, 168);
+    font-size: 1.6em;
+    /* Medium-large font size */
+    margin-bottom: 15px;
+    /* Space below the heading */
+
+    font-family: 'Verdana', sans-serif;
+    /* Font style */
+}
+
+/* Style for paragraphs within columns */
+.fascilities-col p {
+    color: rgb(175, 179, 192);
+    font-size: 1em;
+    /* Standard font size for better readability in columns */
+    text-align: justify;
+
+    line-height: 1.6;
+    /* Line height for readability */
+    font-family: 'Arial', sans-serif;
+    /* Font style */
+}
+
+
+
+/* My Services CSS */
+
+.services .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* Added gap for better spacing between boxes */
+    justify-content: space-between;
+
+}
+
+.services:hover{
+    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+}
+
+.services .boxes .box {
+    width: calc(33.333% - 20px);
+    /* Updated to use a percentage for responsiveness */
+    text-align: center;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adjusted shadow for a subtler effect */
+    cursor: pointer;
+    /* Changed cursor to pointer for interactivity */
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition */
+    transform: translateY(0);
+    /* Initial position */
+}
+
+.services .boxes .box:hover {
+    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+    color: #fff;
+    transform: translateY(-10px);
+    /* Moves box up by 10px */
+}
+
+.services .boxes .box .icon {
+    height: 60px;
+    /* Increased icon size for better visibility */
+    width: 60px;
+    background: #fff;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 60px;
+    font-size: 24px;
+    /* Increased font size for better readability */
+    color: #4070f4;
+    margin: 0 auto 15px auto;
+    /* Adjusted margin for better spacing */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Smooth transition */
+}
+
+.services .boxes .box:hover .icon {
+    background-color: #4070f4;
+    color: #fff;
+}
+
+.services .boxes .box .topic {
+    font-size: 1.25rem;
+    /* Adjusted font size for better hierarchy */
+    font-weight: 600;
+    /* Increased font weight for emphasis */
+    margin-bottom: 10px;
+    color: inherit;
+    /* Ensure text color inherits from the box */
+}
+
+.services .boxes .box p {
+    color: inherit;
+    /* Ensure text color inherits from the box */
+    margin: 0;
+    font-size: 1rem;
+    /* Standard font size for readability */
+}
+
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p {
+    color: #fff;
+    /* Ensured consistency with hover effects */
+}
+
+
+
+/* Contact Me CSS */
+.contact {
+    background: #f0f8ff;
+}
+
+.contact .content {
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.contact .text {
+    width: 80%;
+    text-align: center;
+    margin: auto;
+}
+
+/* Footer CSS */
+footer {
+    background: #4070f4;
+    padding: 15px 0;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+footer .text span {
+    font-size: 17px;
+    font-weight: 400;
+    color: #fff;
+}
+
+footer .text span a {
+    font-weight: 500;
+    color: #fff;
+}
+
+footer .text span a:hover {
+    text-decoration: underline;
+}
+
+/* Scroll TO Top Button CSS */
+.scroll-button a {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    background: #4070f4;
+    padding: 7px 12px;
+    font-size: 18px;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.15);
+    display: none;
+}
+
+/* Responsive Media Query */
+@media (max-width: 1190px) {
+    section .content {
+        width: 85%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .about .about-details {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .about .about-details .left {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .about-details .right {
+        width: 90%;
+        margin: 40px 0;
+    }
+
+    .services .boxes .box {
+        margin: 20px 0;
+        width: calc(100% / 2 - 20px);
+    }
+}
+
+@media (max-width: 900px) {
+    .about .left img {
+        height: 350px;
+        width: 350px;
+    }
+}
+
+@media (max-width: 750px) {
+    nav .navbar {
+        width: 90%;
+    }
+
+    nav .navbar .menu {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        background: #0e2431;
+        height: 100vh;
+        max-width: 400px;
+        width: 100%;
+        padding-top: 60px;
+        flex-direction: column;
+        align-items: center;
+        transition: all 0.5s ease;
+    }
+
+    .navbar.active .menu {
+        left: 0;
+    }
+
+    nav .navbar .menu a {
+        font-size: 23px;
+        display: block;
+        color: #fff;
+        margin: 10px 0;
+    }
+
+    nav.sticky .menu a:hover {
+        color: #4070f4;
+    }
+
+    nav .navbar .media-icons {
+        display: none;
+    }
+
+    nav .menu-btn,
+    .navbar .menu .cancel-btn {
+        display: block;
+    }
+
+    .home .text-two {
+        font-size: 65px;
+    }
+
+    .home .text-three {
+        font-size: 35px;
+    }
+
+    .skills .skills-details {
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .skills-details .text {
+        width: 100%;
+        margin-bottom: 50px;
+    }
+
+    .skills-details .boxes {
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .services .boxes .box {
+        margin: 20px 0;
+        width: 100%;
+    }
+
+    .contact .text {
+        width: 100%;
+    }
+}
+
+@media (max-width: 500px) {
+    .home .text-two {
+        font-size: 55px;
+    }
+
+    .home .text-three {
+        font-size: 33px;
+    }
+
+    .skills-details .boxes .per {
+        font-size: 50px;
+        color: #4070f4;
+    }
+}
