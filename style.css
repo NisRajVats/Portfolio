@@ -595,6 +595,10 @@ section .button button:active {
     /* Font style */
 }
 
+.fascilities-col h3 a{
+    color: white;
+}
+
 /* Style for paragraphs within columns */
 .fascilities-col p {
     color: rgb(175, 179, 192);
