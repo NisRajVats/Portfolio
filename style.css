@@ -1,7 +1,8 @@
 /* Google Font CDN Links */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
 
+/* Reset and Base Styles */
 * {
     margin: 0;
     padding: 0;
@@ -10,34 +11,17 @@
     scroll-behavior: smooth;
 }
 
-
-
-
-.head {
-    position: relative;
-    margin: 0;
-    height: 100vh;
-    background: url('Images/back1.jpg') no-repeat center center;
-    background-size: cover;
+body {
+    font-size: 16px;
+    line-height: 1.5;
 }
 
-.gradient-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust for the overlay effect */
-    z-index: 1; /* Ensure it's above the video but below other content */
-}
-
-
+/* Header and Navigation */
 .head {
     position: relative;
-    margin: 0;
-    height: 100vh;
-    background: url('Images/back1.jpg') no-repeat center center;
-    background-size: cover;
+    height: auto; /* Allow height to adjust based on content */
+    min-height: 100vh; /* Ensure it takes at least full viewport height */
+    background: url('Images/back1.jpg') no-repeat center center/cover;
 }
 
 .head::before {
@@ -47,18 +31,18 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.066), rgba(0, 0, 0, 0.086));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.2));
     backdrop-filter: blur(5px);
     z-index: 1;
 }
 
-.head>* {
+.head > * {
     position: relative;
     z-index: 2;
 }
 
 ::-webkit-scrollbar {
-    width: 10px;
+    width: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -68,7 +52,7 @@
 ::-webkit-scrollbar-thumb {
     background: #6e93f7;
     border-radius: 12px;
-    transition: all 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -77,7 +61,9 @@
 
 nav {
     width: 100%;
-    padding: 20px 0;
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
     z-index: 998;
     transition: all 0.3s ease;
     font-family: "Ubuntu", sans-serif;
@@ -85,11 +71,11 @@ nav {
 
 nav.sticky {
     background: #4070f4;
-    padding: 13px 0;
+    padding: 10px 0;
 }
 
 nav .navbar {
-    width: 90%;
+    width: 95%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -98,7 +84,7 @@ nav .navbar {
 
 nav .navbar .logo a {
     font-weight: 500;
-    font-size: 35px;
+    font-size: 1.8rem;
     color: #4070f4;
 }
 
@@ -113,15 +99,15 @@ nav .navbar .menu {
 
 nav .navbar .menu li {
     list-style: none;
-    margin: 0 8px;
+    margin: 0 6px;
 }
 
 .navbar .menu a {
-    font-size: 18px;
+    font-size: 1rem;
     font-weight: 500;
-    color: #000000;
-    padding: 6px 0;
-    transition: all 0.4s ease;
+    color: #000;
+    padding: 5px 0;
+    transition: color 0.4s ease;
 }
 
 .navbar .menu a:hover {
@@ -138,8 +124,8 @@ nav.sticky .menu a:hover {
 
 .navbar .media-icons a {
     color: #4070f4;
-    font-size: 18px;
-    margin: 0 6px;
+    font-size: 1rem;
+    margin: 0 4px;
 }
 
 nav.sticky .media-icons a {
@@ -150,9 +136,9 @@ nav .menu-btn,
 .navbar .menu .cancel-btn {
     position: absolute;
     color: #fff;
-    right: 30px;
-    top: 20px;
-    font-size: 20px;
+    right: 20px;
+    top: 15px;
+    font-size: 1.25rem;
     cursor: pointer;
     transition: all 0.3s ease;
     display: none;
@@ -166,33 +152,37 @@ nav.sticky .menu-btn {
     color: #fff;
 }
 
-.navbar .menu .menu-btn {
-    color: #fff;
-}
-
+/* Home Section */
 .front {
     display: flex;
-    font-family: "Nunito";
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    font-family: "Nunito", sans-serif;
+    min-height: 100vh;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
 }
 
 .sidepng {
-    width: 50%;
-    margin-left: 7%;
+    width: 45%;
+    margin-left: 5%;
+}
+
+.sidepng img {
+    width: 100%;
+    height: auto;
 }
 
 .front-text {
-    margin: 8% auto;
-    margin-top: 5%;
-    font-family: "Ubuntu", sans-serif;
-    position: relative;
-    max-width: 1200px;
+    max-width: 50%;
     padding: 0 2%;
 }
 
 .front-text .front-heading {
-    font-size: 3rem;
-    color: #333333;
+    font-size: 2.5rem;
+    color: #333;
     margin-bottom: 1rem;
+    font-family: "Ubuntu", sans-serif;
 }
 
 .sp1 {
@@ -200,25 +190,21 @@ nav.sticky .menu-btn {
 }
 
 .front-text .front-para {
-    padding: 1.5rem;
-    padding-left: 0;
-    font-size: 1.12rem;
-    color: #444444;
+    font-size: 1.125rem;
+    color: #444;
     line-height: 1.6;
+    margin-bottom: 1.5rem;
 }
 
 .front-text .button {
-    margin: 10px 0;
-    outline: none;
+    display: inline-block;
     padding: 10px 20px;
     border-radius: 40px;
-    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.5);
-    font-size: 1rem;
-    font-weight: 400;
     background: #16046e;
     color: #fff;
-    cursor: pointer;
-    border: 2px solid transparent;
+    font-size: 1rem;
+    font-weight: 400;
+    box-shadow: 0 4px 8px rgba(0, 0, 255, 0.5);
     transition: all 0.4s ease;
 }
 
@@ -227,66 +213,73 @@ nav.sticky .menu-btn {
     box-shadow: 0 6px 12px rgba(0, 0, 255, 0.6);
 }
 
-.front-text .button:active {
-    background: #0e0e4a;
-    box-shadow: 0 2px 4px rgba(0, 0, 255, 0.4);
-}
-
-.front-text a {
+.front-text a:not(.button) {
     font-family: "Poppins", sans-serif;
     font-size: 1rem;
-    padding-left: 1.5%;
+    margin-left: 1.5rem;
     color: #007BFF;
-    text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.front-text a:hover {
+.front-text a:not(.button):hover {
     color: #0056b3;
     text-decoration: underline;
     transform: translateX(5px);
 }
 
-.front-text a:focus {
-    outline: 2px solid #007BFF;
-    outline-offset: 4px;
+.bulb,
+.UXdesign {
+    position: absolute;
+    height: 10vh;
+    bottom: 0;
 }
-
-.front-text a:active {
-    color: #004085;
-    transform: translateX(2px);
-}
-
 
 .bulb {
-    position: absolute;
-    height: 150px;
     right: 0;
-    bottom: 0;
-
 }
 
 .UXdesign {
-    position: absolute;
-    height: 150px;
     left: 0;
-    bottom: 0;
-
 }
 
-
-
-/* About Section Styling */
-/* Those Elements Where We Have Apply Same CSS,
- I'm Selecting Directly 'Section Tag' and 'Class'  */
+/* General Section Styling */
 section {
-    padding-top: 40px;
+    padding: 40px 0;
 }
 
 section .content {
-    width: 80%;
-    margin: 40px auto;
+    width: 90%;
+    margin: 0 auto;
     font-family: "Poppins", sans-serif;
+}
+
+section .title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+section .title span {
+    color: #0e2431;
+    font-size: 1.75rem;
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 6px;
+}
+
+section .title span::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 70%;
+    background: #4070f4;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
+/* About Section */
+.about {
+    background: #fff; /* Ensure a distinct background */
 }
 
 .about .about-details {
@@ -296,127 +289,64 @@ section .content {
     flex-wrap: wrap;
 }
 
-section .title {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 40px;
-}
-
-section .title span {
-    color: #0e2431;
-    font-size: 2rem;
-    /* Updated font size for better readability */
-    font-weight: 600;
-    position: relative;
-    padding-bottom: 8px;
-}
-
-section .title span::before,
-section .title span::after {
-    content: "";
-    position: absolute;
-    height: 3px;
-    background: #4070f4;
-    left: 0;
-    bottom: 0;
-}
-
-section .title span::after {
-    width: 70%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.about .about-details .left {
+.about .left {
     width: 45%;
 }
 
 .about .left img {
-    height: 400px;
     width: 100%;
-    /* Ensure responsiveness */
-    max-width: 400px;
-    /* Maintain the max width */
+    max-width: 300px;
+    height: auto;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    /* Added shadow for depth */
 }
 
-.about-details .right {
-    width: 55%;
+.about .right {
+    width: 50%;
 }
 
 section .topic {
     color: #0e2431;
-    font-size: 1.5rem;
-    /* Updated font size for consistency */
+    font-size: 1.25rem;
     font-weight: 500;
     margin-bottom: 10px;
 }
 
-.about-details .right p {
+.about .right p {
     text-align: justify;
-    color: #444444;
-    /* Slightly lighter for better readability */
-    line-height: 1.6;
-    /* Improved line spacing */
-}
-
-section .button {
-    margin: 16px 0;
-
+    color: #444;
 }
 
 section .button button {
-    outline: none;
-    padding: 12px 24px;
-    /* Increased padding for better click area */
+    padding: 10px 20px;
     border-radius: 18px;
-    font-size: 1rem;
-    /* Standardized font size */
+    font-size: 0.95rem;
     font-weight: 500;
-    /* Slightly bolder font weight */
     background: #4070f4;
     color: #fff;
-    border: 2px solid transparent;
+    border: none;
     cursor: pointer;
     transition: all 0.3s ease;
-    /* Slightly faster transition */
 }
 
 section .button button:hover {
-    background-color: #fff;
+    background: #fff;
     color: #4070f4;
-    border-color: #4070f4;
+    border: 2px solid #4070f4;
     transform: translateY(-2px);
-    /* Slight lift effect on hover */
 }
 
-section .button button:active {
-    background-color: #0056b3;
-    /* Darker background on click */
-    color: #fff;
-    border-color: #0056b3;
-    transform: translateY(0);
-    /* Remove lift effect on click */
-}
-
-
-/* My Skills CSS */
-
+/* Skills Section */
 .skills {
-    background-image: linear-gradient(to right, #a8caba 0%, #5d4157 100%);
-}
-
-.skills .content {
-    padding: 40px 0;
+    background: linear-gradient(to right, #a8caba, #5d4157);
 }
 
 .skills .skills-details {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .skills-details .text {
@@ -428,23 +358,22 @@ section .button button:active {
     text-align: justify;
 }
 
-.skills .skills-details .experience {
+.skills .experience {
     display: flex;
     align-items: center;
-    margin: 0 10px;
+    margin: 15px 0;
 }
 
-.skills-details .experience .num {
+.skills .experience .num {
     color: #0e2431;
-    font-size: 80px;
+    font-size: 3rem;
 }
 
-.skills-details .experience .exp {
+.skills .experience .exp {
     color: #0e2431;
-    margin-left: 20px;
-    font-size: 18px;
+    margin-left: 15px;
+    font-size: 1rem;
     font-weight: 500;
-    margin: 0 6px;
 }
 
 .skills-details .boxes {
@@ -455,344 +384,215 @@ section .button button:active {
 }
 
 .skills-details .box {
-    width: calc(100% / 2 - 20px);
-    margin: 20px 0;
+    width: calc(50% - 15px);
+    margin: 15px 0;
+    text-align: center;
 }
 
 .skills-details .boxes .topic {
-    font-size: 20px;
+    font-size: 1.1rem;
     color: #27469a;
 }
 
 .skills-details .boxes .per {
-    font-size: 60px;
+    font-size: 2.5rem;
     color: #27469a;
-
 }
 
-
-/* My Projects */
-
-/* Style for the section */
-/* Style for the section */
+/* Projects Section */
 .fascilities {
-    padding: 60px 20px;
-    /* Padding around the section */
-    text-align: center;
-    /* Center text alignment */
-
+    padding: 40px 0;
 }
 
-/* Style for the heading */
-.fascilities h1 {
-    font-size: 2.8em;
-    /* Large font size */
-    margin-bottom: 20px;
-    /* Space below the heading */
-    text-decoration: underline;
-    /* Underline the heading */
-    color: #2c3e50;
-    /* Dark blue-grey color for the heading */
-    font-family: 'Arial', sans-serif;
-    /* Font style */
-}
-
-/* Style for the paragraph */
-.fascilities p {
-    font-size: 1.1em;
-    /* Slightly larger font size */
-    line-height: 1.8;
-    /* Line height for readability */
-    color: #555;
-    /* Darker grey color for text */
-    margin-bottom: 40px;
-    /* Space below the paragraph */
-    max-width: 900px;
-    /* Maximum width of the text */
-    margin-left: auto;
-    /* Center horizontally */
-    margin-right: auto;
-    /* Center horizontally */
-    font-family: 'Georgia', serif;
-    /* Font style */
-}
-
-/* Container for rows */
-.row {
-    display: flex;
-    /* Flexbox for layout */
-    flex-wrap: wrap;
-    /* Wrap columns to next line if needed */
-    gap: 30px;
-    /* Space between columns */
-    justify-content: center;
-    /* Center align columns */
-}
-
-/* Style for each column */
-/* Style for each column */
-.fascilities-col {
-    flex: 1 1 calc(33.333% - 30px);
-    /* 3 columns, adjust for gaps */
-    box-sizing: border-box;
-    /* Include padding and border in the element's total width and height */
-    background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
-    padding: 25px;
-    /* Padding inside each column */
-    border-radius: 12px;
-    /* Rounded corners */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-    /* More prominent shadow */
-    text-align: left;
-    /* Left-align text in columns */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    /* Smooth transition for hover effects */
-}
-
-/* Hover effect for columns */
-.fascilities-col:hover {
-    transform: translateY(-10px);
-    /* Slight lift effect */
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
-    /* Enhanced shadow on hover */
-}
-
-/* Style for images */
-.fascilities-col img {
-    width: 100%;
-    /* Full width of the column */
-    height: auto;
-    /* Maintain aspect ratio */
-    border-radius: 8px;
-    /* Rounded corners for images */
-    margin-bottom: 20px;
-    /* Space below the image */
-    border: 2px solid #ddd;
-    /* Light grey border around images */
-    transition: transform 0.3s ease, border-color 0.3s ease;
-    /* Smooth transition for scaling and border color */
-}
-
-/* Hover effect for images */
-.fascilities-col img:hover {
-    transform: scale(1.05);
-    /* Slightly increase the size of the image */
-    border-color: #3498db;
-    /* Change border color on hover */
-}
-
-
-/* Style for headings within columns */
-.fascilities-col h3 {
-    text-align: center;
-    color: rgb(172, 168, 168);
-    font-size: 1.6em;
-    /* Medium-large font size */
-    margin-bottom: 15px;
-    /* Space below the heading */
-
-    font-family: 'Verdana', sans-serif;
-    /* Font style */
-}
-
-.fascilities-col h3 a{
-    color: white;
-}
-
-/* Style for paragraphs within columns */
-.fascilities-col p {
-    color: rgb(175, 179, 192);
-    font-size: 1em;
-    /* Standard font size for better readability in columns */
-    text-align: justify;
-
-    line-height: 1.6;
-    /* Line height for readability */
-    font-family: 'Arial', sans-serif;
-    /* Font style */
-}
-
-
-
-/* My Services CSS */
-
-.services .boxes {
+.fascilities .row {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    /* Added gap for better spacing between boxes */
+    justify-content: center;
+}
+
+.fascilities-col {
+    flex: 1 1 calc(33.333% - 20px);
+    background: linear-gradient(to top, #09203f, #537895);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fascilities-col:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.fascilities-col img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+.fascilities-col img:hover {
+    transform: scale(1.05);
+}
+
+.fascilities-col h3 {
+    text-align: center;
+    color: #fff;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.fascilities-col h3 a {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.fascilities-col h3 a:hover {
+    color: #4070f4;
+}
+
+.fascilities-col p {
+    color: #afb3c0;
+    font-size: 0.9rem;
+    text-align: justify;
+}
+
+/* Services Section */
+.services .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
     justify-content: space-between;
-
 }
 
-.services:hover{
-    background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
-}
-
-.services .boxes .box {
-    width: calc(33.333% - 20px);
-    /* Updated to use a percentage for responsiveness */
+.services .box {
+    width: calc(33.333% - 15px);
     text-align: center;
     border-radius: 12px;
-    padding: 30px;
+    padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Adjusted shadow for a subtler effect */
-    cursor: pointer;
-    /* Changed cursor to pointer for interactivity */
-    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
-    /* Smooth transition */
-    transform: translateY(0);
-    /* Initial position */
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.services .boxes .box:hover {
-    background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+.services .box:hover {
+    background: linear-gradient(to top, #1e3c72, #2a5298);
     color: #fff;
     transform: translateY(-10px);
-    /* Moves box up by 10px */
 }
 
-.services .boxes .box .icon {
-    height: 60px;
-    /* Increased icon size for better visibility */
-    width: 60px;
+.services .box .icon {
+    height: 50px;
+    width: 50px;
     background: #fff;
     border-radius: 50%;
-    text-align: center;
-    line-height: 60px;
-    font-size: 24px;
-    /* Increased font size for better readability */
-    color: #4070f4;
-    margin: 0 auto 15px auto;
-    /* Adjusted margin for better spacing */
-    transition: background-color 0.3s ease, color 0.3s ease;
-    /* Smooth transition */
-}
-
-.services .boxes .box:hover .icon {
-    background-color: #4070f4;
-    color: #fff;
-}
-
-.services .boxes .box .topic {
+    line-height: 50px;
     font-size: 1.25rem;
-    /* Adjusted font size for better hierarchy */
-    font-weight: 600;
-    /* Increased font weight for emphasis */
-    margin-bottom: 10px;
-    color: inherit;
-    /* Ensure text color inherits from the box */
+    color: #4070f4;
+    margin: 0 auto 10px;
+    transition: background 0.3s ease, color 0.3s ease;
 }
 
-.services .boxes .box p {
-    color: inherit;
-    /* Ensure text color inherits from the box */
-    margin: 0;
-    font-size: 1rem;
-    /* Standard font size for readability */
-}
-
-.services .boxes .box:hover .topic,
-.services .boxes .box:hover p {
+.services .box:hover .icon {
+    background: #4070f4;
     color: #fff;
-    /* Ensured consistency with hover effects */
 }
 
+.services .box .topic {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
 
+.services .box p {
+    font-size: 0.9rem;
+}
 
-/* Contact Me CSS */
+/* Contact Section */
 .contact {
     background: #f0f8ff;
 }
 
-.contact .content {
-    margin: 0 auto;
-    padding: 30px 0;
-}
-
 .contact .text {
-    width: 80%;
+    width: 90%;
     text-align: center;
-    margin: auto;
+    margin: 0 auto;
 }
 
-/* Footer CSS */
+/* Footer */
 footer {
     background: #4070f4;
-    padding: 15px 0;
+    padding: 10px 0;
     text-align: center;
     font-family: "Poppins", sans-serif;
 }
 
 footer .text span {
-    font-size: 17px;
-    font-weight: 400;
+    font-size: 0.95rem;
     color: #fff;
 }
 
 footer .text span a {
-    font-weight: 500;
     color: #fff;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
 footer .text span a:hover {
+    color: #0e2431;
     text-decoration: underline;
 }
 
-/* Scroll TO Top Button CSS */
+/* Scroll-to-Top Button */
 .scroll-button a {
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    bottom: 15px;
+    right: 15px;
     color: #fff;
     background: #4070f4;
-    padding: 7px 12px;
-    font-size: 18px;
+    padding: 8px 12px;
+    font-size: 1rem;
     border-radius: 6px;
-    box-shadow: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
     display: none;
+    transition: background 0.3s ease;
 }
 
-/* Responsive Media Query */
+.scroll-button a:hover {
+    background: #6e93f7;
+}
+
+/* Mobile-Specific Media Queries */
 @media (max-width: 1190px) {
     section .content {
-        width: 85%;
+        width: 95%;
     }
 }
 
 @media (max-width: 1000px) {
-    .about .about-details {
-        justify-content: center;
+    .about .about-details,
+    .skills .skills-details {
         flex-direction: column;
+        align-items: center;
     }
 
-    .about .about-details .left {
-        display: flex;
-        justify-content: center;
+    .about .left,
+    .about .right,
+    .skills-details .text,
+    .skills-details .boxes {
         width: 100%;
     }
 
-    .about-details .right {
-        width: 90%;
-        margin: 40px 0;
-    }
-
-    .services .boxes .box {
-        margin: 20px 0;
-        width: calc(100% / 2 - 20px);
-    }
-}
-
-@media (max-width: 900px) {
-    .about .left img {
-        height: 350px;
-        width: 350px;
+    .services .box {
+        width: calc(50% - 15px);
     }
 }
 
 @media (max-width: 750px) {
     nav .navbar {
-        width: 90%;
+        width: 100%;
     }
 
     nav .navbar .menu {
@@ -801,12 +601,13 @@ footer .text span a:hover {
         top: 0;
         background: #0e2431;
         height: 100vh;
-        max-width: 400px;
         width: 100%;
-        padding-top: 60px;
+        max-width: none;
+        padding-top: 50px;
         flex-direction: column;
         align-items: center;
-        transition: all 0.5s ease;
+        transition: left 0.5s ease;
+        overflow-y: auto;
     }
 
     .navbar.active .menu {
@@ -814,10 +615,10 @@ footer .text span a:hover {
     }
 
     nav .navbar .menu a {
-        font-size: 23px;
-        display: block;
+        font-size: 1.25rem;
         color: #fff;
-        margin: 10px 0;
+        margin: 15px 0;
+        display: block;
     }
 
     nav.sticky .menu a:hover {
@@ -833,33 +634,83 @@ footer .text span a:hover {
         display: block;
     }
 
-    .home .text-two {
-        font-size: 65px;
-    }
-
-    .home .text-three {
-        font-size: 35px;
-    }
-
-    .skills .skills-details {
-        align-items: center;
-        justify-content: center;
+    .front {
         flex-direction: column;
+        padding: 20px;
+        text-align: center;
+        min-height: auto; /* Allow content to dictate height */
+        height: auto; /* Ensure it doesn't force 100vh */
+    }
+
+    .sidepng,
+    .front-text {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .sidepng {
+        margin: 20px 0;
+    }
+
+    .front-text .front-heading {
+        font-size: 1.75rem;
+    }
+
+    .front-text .front-para {
+        font-size: 1rem;
+        padding: 0;
+    }
+
+    .bulb,
+    .UXdesign {
+        height: 8vh;
+        display: none; /* Hide decorative images on mobile to save space */
+    }
+
+    .about .about-details {
+        flex-direction: column;
+        align-items: center;
+        text-align: center; /* Center-align text */
+    }
+
+    .about .left,
+    .about .right {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .about .left img {
+        margin: 0 auto;
+        display: block;
+    }
+
+    .about .right {
+        margin-top: 20px;
+    }
+
+    .about .right p {
+        text-align: center; /* Center-align paragraph text */
+    }
+
+    .about .button {
+        display: flex;
+        justify-content: center; /* Center-align the button */
     }
 
     .skills-details .text {
-        width: 100%;
-        margin-bottom: 50px;
+        margin-bottom: 30px;
     }
 
-    .skills-details .boxes {
-        justify-content: center;
-        align-items: center;
+    .skills-details .box {
         width: 100%;
     }
 
-    .services .boxes .box {
-        margin: 20px 0;
+    .fascilities-col {
+        flex: 1 1 100%;
+    }
+
+    .services .box {
         width: 100%;
     }
 
@@ -869,16 +720,52 @@ footer .text span a:hover {
 }
 
 @media (max-width: 500px) {
-    .home .text-two {
-        font-size: 55px;
+    nav .navbar .logo a {
+        font-size: 1.5rem;
     }
 
-    .home .text-three {
-        font-size: 33px;
+    nav .navbar .menu a {
+        font-size: 1.1rem;
+    }
+
+    .front-text .front-heading {
+        font-size: 1.5rem;
+    }
+
+    .front-text .front-para {
+        font-size: 0.9rem;
+    }
+
+    .front-text .button {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+
+    section .title span {
+        font-size: 1.5rem;
+    }
+
+    .about .left img {
+        max-width: 250px;
+    }
+
+    section .topic {
+        font-size: 1.1rem;
+    }
+
+    .skills .experience .num {
+        font-size: 2.5rem;
     }
 
     .skills-details .boxes .per {
-        font-size: 50px;
-        color: #4070f4;
+        font-size: 2rem;
+    }
+
+    .fascilities-col h3 {
+        font-size: 1.2rem;
+    }
+
+    .fascilities-col p {
+        font-size: 0.85rem;
     }
 }
