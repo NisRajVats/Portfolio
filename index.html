@@ -1,269 +1,760 @@
 <!DOCTYPE html>
-<!-- Website - www.codingnepalweb.com -->
-<html lang="en" dir="ltr">
-
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>Responsive Portfolio Website HTML CSS| CodingNepal</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- Fontawesome CDN Link -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nishant Chauhan - Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <style>
+        :root {
+            --primary-dark: #1A1A2E;
+            --secondary-dark: #16213E;
+            --accent-teal: #00DDEB;
+            --accent-pink: #FF007A;
+            --text-light: #ffffff;
+            
+            /* Light mode colors */
+            --primary-light: #FFFFFF;
+            --secondary-light: #0A2463; /* Navy blue */
+            --text-dark: #1A1A2E;
+        }
+        
+        body {
+            background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
+            color: var(--text-light);
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+        }
+        
+        body.light-mode {
+            background: linear-gradient(135deg, var(--primary-light), var(--primary-light));
+            color: var(--text-dark);
+        }
+        
+        /* Text Colors */
+        .text-accent {
+            color: var(--accent-teal);
+        }
+        .light-mode .text-accent {
+            color: var(--secondary-light);
+        }
+        .text-pink {
+            color: var(--accent-pink);
+        }
+        
+        /* Background Colors */
+        .bg-accent {
+            background-color: var(--accent-teal);
+        }
+        .light-mode .bg-accent {
+            background-color: var(--secondary-light);
+        }
+        .bg-pink {
+            background-color: var(--accent-pink);
+        }
+        .bg-dark {
+            background-color: var(--primary-dark);
+        }
+        .light-mode .bg-dark {
+            background-color: var(--primary-light);
+        }
+        
+        /* Borders */
+        .border-accent {
+            border-color: var(--accent-teal);
+        }
+        .light-mode .border-accent {
+            border-color: var(--secondary-light);
+        }
+        .border-pink {
+            border-color: var(--accent-pink);
+        }
+        
+        /* Hover Effects */
+        .hover\:bg-accent:hover {
+            background-color: var(--accent-teal);
+        }
+        .light-mode .hover\:bg-accent:hover {
+            background-color: var(--secondary-light);
+        }
+        .hover\:text-accent:hover {
+            color: var(--accent-teal);
+        }
+        .light-mode .hover\:text-accent:hover {
+            color: var(--secondary-light);
+        }
+        
+        /* Custom Shadows */
+        .shadow-custom {
+            box-shadow: 0 4px 20px rgba(0, 221, 235, 0.2);
+        }
+        .light-mode .shadow-custom {
+            box-shadow: 0 4px 20px rgba(10, 36, 99, 0.2);
+        }
+        .shadow-pink {
+            box-shadow: 0 4px 20px rgba(255, 0, 122, 0.2);
+        }
+        
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.9));
+            position: relative;
+            overflow: hidden;
+        }
+        .light-mode #hero {
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
+        }
+        
+        /* Code Block Styling */
+        .code-block {
+            background: rgba(26, 26, 46, 0.8);
+            border-left: 4px solid var(--accent-teal);
+            border-radius: 0 8px 8px 0;
+        }
+        .light-mode .code-block {
+            background: rgba(255, 255, 255, 0.9);
+            border-left: 4px solid var(--secondary-light);
+        }
+        .code-block .keyword {
+            color: #FF79C6;
+        }
+        .code-block .string {
+            color: #FF6F61;
+        }
+        .code-block .boolean {
+            color: #F1FA8C;
+        }
+        .code-block .operator {
+            color: var(--text-light);
+        }
+        .light-mode .code-block .operator {
+            color: var(--text-dark);
+        }
+        
+        /* Button Styles */
+        .btn-accent {
+            background: var(--accent-teal);
+            color: var(--primary-dark);
+            transition: all 0.3s ease;
+        }
+        .light-mode .btn-accent {
+            background: var(--secondary-light);
+            color: var(--primary-light);
+        }
+        .btn-accent:hover {
+            background: transparent;
+            color: var(--accent-teal);
+            border-color: var(--accent-teal);
+        }
+        .light-mode .btn-accent:hover {
+            color: var(--secondary-light);
+            border-color: var(--secondary-light);
+        }
+        .btn-pink {
+            background: var(--accent-pink);
+            color: white;
+            transition: all 0.3s ease;
+        }
+        .btn-pink:hover {
+            background: transparent;
+            color: var(--accent-pink);
+            border-color: var(--accent-pink);
+        }
+        
+        /* Card Styles */
+        .card {
+            background: rgba(26, 26, 46, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 221, 235, 0.2);
+            transition: all 0.3s ease;
+        }
+        .light-mode .card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(10, 36, 99, 0.2);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 221, 235, 0.3);
+            border-color: var(--accent-teal);
+        }
+        .light-mode .card:hover {
+            box-shadow: 0 10px 25px rgba(10, 36, 99, 0.3);
+            border-color: var(--secondary-light);
+        }
+        
+        /* Navigation */
+        nav {
+            backdrop-filter: blur(10px);
+            background: rgba(26, 26, 46, 0.8);
+        }
+        .light-mode nav {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        /* Mobile Menu */
+        #mobile-menu {
+            display: none;
+            backdrop-filter: blur(10px);
+        }
+        .light-mode #mobile-menu {
+            background: rgba(255, 255, 255, 0.95);
+        }
+        #mobile-menu.menu-open {
+            display: block;
+        }
+        
+        /* Section Headings */
+        .section-heading {
+            position: relative;
+            display: inline-block;
+        }
+        .section-heading:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--accent-teal);
+        }
+        .light-mode .section-heading:after {
+            background: var(--secondary-light);
+        }
+        
+        /* Project Carousel */
+        .project-card.highlighted {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(0, 221, 235, 0.5);
+        }
+        .light-mode .project-card.highlighted {
+            box-shadow: 0 0 25px rgba(10, 36, 99, 0.4);
+        }
+        
+        /* Contact Form */
+        .light-mode input,
+        .light-mode textarea {
+            background: rgba(255, 255, 255, 0.9);
+            border-color: rgba(10, 36, 99, 0.3);
+            color: var(--text-dark);
+        }
+        
+        /* Footer */
+        .light-mode footer {
+            background: var(--secondary-light);
+            color: white;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .code-block {
+                margin-top: 2rem;
+            }
+            .section-heading:after {
+                width: 30%;
+            }
+        }
+    </style>
 </head>
-
-<body> 
-    
-
-
-    <header class="head">
-        <!-- Move to up button -->
-        <div class="scroll-button">
-            <a href="#home"><i class="fas fa-arrow-up"></i></a>
+<body class="antialiased">
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 shadow-custom">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold">
+                <a href="#" class="text-accent hover:text-white light-mode:hover:text-secondary-light">Nishant Chauhan</a>
+            </div>
+            <ul id="nav-menu" class="hidden md:flex space-x-6">
+                <li><a href="#home" class="hover:text-accent">Home</a></li>
+                <li><a href="#about" class="hover:text-accent">About</a></li>
+                <li><a href="#skills" class="hover:text-accent">Skills</a></li>
+                <li><a href="#projects" class="hover:text-accent">Projects</a></li>
+                <li><a href="#services" class="hover:text-accent">Services</a></li>
+                <li><a href="#contact" class="hover:text-accent">Contact</a></li>
+            </ul>
+            <div class="flex items-center space-x-4">
+                <button id="dark-mode-toggle" class="text-white light-mode:text-secondary-light hover:text-accent">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white light-mode:text-secondary-light"><i class="fas fa-bars"></i></button>
+                </div>
+            </div>
         </div>
-        <!-- navgaition menu -->
-        <nav>
-            <div class="navbar">
-                <div class="logo"><a href="#">Portfolio.</a></div>
-                <ul class="menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <div class="cancel-btn">
-                        <i class="fas fa-times"></i>
-                    </div>
-                </ul>
-                <div class="media-icons">
-                    <a href="https://x.com/Nishant70822788" target="_blank" aria-label="Twitter">
-                        <i class="fab fa-twitter"></i>
+        <!-- Mobile Menu -->
+        <ul id="mobile-menu" class="md:hidden text-center py-4 bg-dark bg-opacity-90">
+            <li class="py-2"><a href="#home" class="hover:text-accent">Home</a></li>
+            <li class="py-2"><a href="#about" class="hover:text-accent">About</a></li>
+            <li class="py-2"><a href="#skills" class="hover:text-accent">Skills</a></li>
+            <li class="py-2"><a href="#projects" class="hover:text-accent">Projects</a></li>
+            <li class="py-2"><a href="#services" class="hover:text-accent">Services</a></li>
+            <li class="py-2"><a href="#contact" class="hover:text-accent">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative" id="hero">
+        <div id="particles-js" class="absolute inset-0"></div>
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10 py-20">
+            <!-- Left Content -->
+            <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4 light-mode:text-secondary-light">NISHANT CHAUHAN</h1>
+                <div class="space-y-4 mb-8">
+                    <p class="text-xl md:text-2xl light-mode:text-secondary-light">Hello,</p>
+                    <p class="text-xl md:text-2xl light-mode:text-secondary-light">This is Nishant Chauhan,</p>
+                    <p class="text-xl md:text-2xl text-accent">I'm a Professional Software Developer.</p>
+                </div>
+                
+                
+                <!-- Buttons -->
+                <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
+                    <a href="#contact" class="btn-accent px-6 py-3 rounded-full border-2 border-accent font-medium">
+                        CONTACT ME <i class="fas fa-paper-plane ml-2"></i>
                     </a>
-                    <a href="https://www.linkedin.com/in/nishantrajput393/" target="_blank" aria-label="LinkedIn">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="https://github.com/NisRajVats" target="_blank" aria-label="GitHub">
-                        <i class="fab fa-github"></i>
-                    </a>
-                    <a href="https://www.hackerrank.com/profile/rajputnishant393" target="_blank"
-                        aria-label="HackerRank">
-                        <i class="fab fa-hacker-news"></i>
-                    </a>
-                    <a href="https://www.codechef.com/users/nisraj393" target="_blank" aria-label="CodeChef">
-                        <i class="fab fa-codepen"></i>
+                    <a href="Images/Updated Nishant Resume.pdf" target="_blank" class="btn-pink px-6 py-3 rounded-full border-2 border-pink font-medium">
+                        GET RESUME <i class="fas fa-download ml-2"></i>
                     </a>
                 </div>
-
-            </div>
-            <div class="menu-btn">
-                <i class="fas fa-bars"></i>
+                
+                
             </div>
             
-        </nav>
-
-
-
-        <!-- Home Section -->
-<section class="front" id="home">
-    <img src="Images/uxdesign.png" alt="UX Design Illustration" class="UXdesign" loading="lazy">
-    <div class="sidepng">
-        <img src="Images/manpng.webp" alt="Developer Illustration" loading="lazy">
-    </div>
-    <div class="front-text">
-        <h1 class="front-heading">Turning Vision Into Reality With <span class="sp1">Code</span> And <span class="sp1">Design</span></h1>
-        <p class="front-para">Hi, I’m Nishant, a web developer passionate about transforming ideas into visually stunning, functional websites. I specialize in sleek, modern designs and intuitive functionality tailored to your needs. Explore my portfolio to see my work, and let’s create something exceptional together—contact me today!</p>
-        <div>
-            <a href="https://www.linkedin.com/in/nishant-rajput-555834230/" class="button">Let's Talk</a>
-            <a href="https://github.com/NisRajVats" aria-label="GitHub Profile">GitHub -></a>
-        </div>
-    </div>
-    <img src="Images/bulb1.png" alt="Light Bulb Illustration" class="bulb" loading="lazy">
-</section>
-
-<!-- About Section -->
-<section class="about" id="about">
-    <div class="content">
-        <div class="title"><span>About Me</span></div>
-        <div class="about-details">
-            <div class="left">
-                <img src="Images/me1.png" alt="Nishant Rajput Profile Photo" loading="lazy">
-            </div>
-            <div class="right">
-                <div class="topic">Designing Is My Passion</div>
-                <p>I’m a frontend web developer with 5 years of experience and a student at SRM University. My expertise spans HTML, CSS, Tailwind Framework, JavaScript, and PHP, enabling me to craft responsive, stunning web interfaces. I’m currently exploring the MERN stack to become a full-stack developer. Join me as I blend creativity and technology to shape impactful web solutions.</p>
-                <div class="button">
-                    <a href="Images/rem1.pdf" download="Nishant_Rajput_CV.pdf" aria-label="Download CV"><button>Download CV</button></a>
+            <!-- Right Content - Code Block -->
+            <div class="md:w-1/2">
+                <div class="code-block p-6 max-w-md mx-auto md:mx-0 md:ml-auto">
+                    <div class="dots flex gap-2 mb-4">
+                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                        <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                    </div>
+                    <pre class="overflow-x-auto text-sm md:text-base">
+<span class="keyword">const</span> coder = {
+    name: <span class="string">"Nishant Chauhan"</span>,
+    skills: [<span class="string">"React"</span>, <span class="string">"Next.js"</span>, <span class="string">"Redux"</span>, 
+             <span class="string">"Express"</span>, <span class="string">"NestJS"</span>, <span class="string">"MySQL"</span>,
+             <span class="string">"MongoDB"</span>, <span class="string">"Docker"</span>],
+    quickLearner: <span class="boolean">true</span>,
+    problemSolver: <span class="boolean">true</span>,
+    hireable: <span class="keyword">function</span>() {
+        <span class="keyword">return</span> (
+            this.hardWorker <span class="operator">&&</span>
+            this.problemSolver <span class="operator">&&</span>
+            this.skills.length <span class="operator">>=</span> 5
+        );
+    }
+};</pre>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-    <!-- My Skill Section Start -->
-    <!-- Section Tag and Other Div will same where we need to put same CSS -->
-    <section class="skills" id="skills">
-        <div class="content">
-            <div class="title"><span>My Skills</span></div>
-            <div class="skills-details">
-                <div class="text">
-                    <div class="topic">Skills Reflects Our Knowledge</div>
-                    <p>My skills embody a deep understanding of modern web development. From crafting dynamic front-end interfaces to delving into full-stack solutions, each capability demonstrates my dedication to continuous learning and my commitment to delivering exceptional, cutting-edge web experiences.
+    <!-- About Section -->
+    <section id="about" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-accent mb-12  items-center justify-center">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center gap-8">
+                <div class="md:w-1/2">
+                    <img src="Images/me1.png" alt="Nishant Chauhan" class="w-full max-w-sm mx-auto rounded-lg shadow-custom">
+                </div>
+                <div class="md:w-1/2">
+                    <h3 class="text-2xl font-semibold text-accent mb-4">A Passionate AI & Full-Stack Developer</h3>
+                    <p class="text-lg mb-6 light-mode:text-secondary-light">
+                        Hi, I'm Nishant Chauhan, an AI & Full-Stack Developer skilled in Next.js, Tailwind CSS, FastAPI, PostgreSQL, and AI integration. I'm a final-year B.Tech CSE student at SRM University, NCR, leading the development of an AI-Powered Resume Optimizer & Auto-Job Apply System. With a strong foundation in AI and web development, I thrive on problem-solving, leadership, and collaboration.
                     </p>
-                    <div class="experience">
-                        <div class="num">5</div>
-                        <div class="exp">
-                            Years Of <br />
-                            Experience
+                    <a href="Images/Updated Nishant Resume.pdf" target="_blank" class="btn-accent px-6 py-3 rounded-full border-2 border-accent font-medium inline-block">
+                        Download CV
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-dark bg-opacity-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-accent mb-12 items-center justify-center">My Skills</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <!-- Skill Card 1 -->
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-accent mb-4">Frontend</h3>
+                    <p class="light-mode:text-secondary-light">HTML5, CSS3, JavaScript, Next.js, Tailwind CSS, React</p>
+                </div>
+                
+                <!-- Skill Card 2 -->
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-accent mb-4">Backend</h3>
+                    <p class="light-mode:text-secondary-light">FastAPI, PostgreSQL, Firebase/Supabase</p>
+                </div>
+                
+                <!-- Skill Card 3 -->
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-accent mb-4">AI & Automation</h3>
+                    <p class="light-mode:text-secondary-light">Hugging Face models, LangChain, Selenium, Scrapy</p>
+                </div>
+                
+                <!-- Skill Card 4 -->
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-accent mb-4">Programming Languages</h3>
+                    <p class="light-mode:text-secondary-light">Java, Python, C</p>
+                </div>
+                
+                <!-- Skill Card 5 -->
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-accent mb-4">Version Control</h3>
+                    <p class="light-mode:text-secondary-light">Git, GitHub</p>
+                </div>
+                
+                <!-- Skill Card 6 -->
+                <div class="card p-6 rounded-lg">
+                    <h3 class="text-xl font-semibold text-accent mb-4">Other Tools</h3>
+                    <p class="light-mode:text-secondary-light">MATLAB, REST APIs, Cloud Technologies (AWS/GCP), CI/CD</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-accent mb-12 items-center justify-center">My Projects</h2>
+            <div class="project-carousel relative overflow-hidden py-8">
+                <div class="flex gap-6">
+                    <!-- Project 1 -->
+                    <div class="project-card p-6 rounded-lg flex-shrink-0 w-80 md:w-96">
+                        <img src="Images/Screenshot 2025-03-17 235329.png" alt="AI-Powered Resume Optimizer" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">AI-Powered Resume Optimizer</h3>
+                            <p class="mb-4 light-mode:text-secondary-light">A full-stack AI-driven platform that optimizes resumes and auto-applies for jobs. Improved ATS scores by 40%.</p>
+                            <a href="https://github.com/NisRajVats" class="text-accent hover:underline">View Project →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 2 -->
+                    <div class="project-card p-6 rounded-lg flex-shrink-0 w-80 md:w-96">
+                        <img src="Images/web1.png" alt="OctaNet Internship Project" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">OctaNet Internship Project</h3>
+                            <p class="mb-4 light-mode:text-secondary-light">Redesigned the OctaNet Services website, improving page load time by 30%.</p>
+                            <a href="https://nisrajvats.github.io/octanet-aug-Landing/" class="text-accent hover:underline">View Project →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 3 -->
+                    <div class="project-card p-6 rounded-lg flex-shrink-0 w-80 md:w-96">
+                        <img src="Images/web3.png" alt="E-Commerce Website" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">E-Commerce Website</h3>
+                            <p class="mb-4 light-mode:text-secondary-light">A responsive e-commerce website built with HTML, CSS, and JavaScript.</p>
+                            <a href="https://github.com/NisRajVats" class="text-accent hover:underline">View Project →</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Project 4 -->
+                    <div class="project-card p-6 rounded-lg flex-shrink-0 w-80 md:w-96">
+                        <img src="Images/portfolio.png" alt="Portfolio Website" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">Portfolio Website</h3>
+                            <p class="mb-4 light-mode:text-secondary-light">A portfolio website showcasing my skills and projects.</p>
+                            <a href="https://nisrajvats.github.io/Portfolio/" class="text-accent hover:underline">View Project →</a>
                         </div>
                     </div>
                 </div>
-                <div class="boxes">
-                    <div class="box">
-                        <div class="topic">HTML</div>
-                        <div class="per">90%</div>
-                    </div>
-                    <div class="box">
-                        <div class="topic">CSS</div>
-                        <div class="per">80%</div>
-                    </div>
-                    <div class="box">
-                        <div class="topic">JavScript</div>
-                        <div class="per">70%</div>
-                    </div>
-                    <div class="box">
-                        <div class="topic">PHP</div>
-                        <div class="per">60%</div>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-dark bg-opacity-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center text-accent mb-12 items-center justify-center">My Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="card p-8 rounded-lg text-center">
+                    <i class="fas fa-laptop-code text-4xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-accent mb-4">AI-Powered Web Development</h3>
+                    <p class="light-mode:text-secondary-light">Building intelligent web applications using AI models, Next.js, and FastAPI.</p>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="card p-8 rounded-lg text-center">
+                    <i class="fas fa-paint-brush text-4xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-accent mb-4">Full-Stack Development</h3>
+                    <p class="light-mode:text-secondary-light">Creating dynamic and scalable applications with React, Tailwind CSS, PostgreSQL, and Firebase.</p>
+                </div>
+
+                 <!-- Service 2 -->
+                 <div class="card p-8 rounded-lg text-center">
+                    <i class="fas fa-paint-brush text-4xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-accent mb-4">Cloud Deployment & CI/CD Integrationn</h3>
+                    <p class="light-mode:text-secondary-light">Deploying applications on AWS/GCP, implementing CI/CD pipelines using GitHub Actions and Jenkins.</p>
+                </div>
+
+                 <!-- Service 2 -->
+                 <div class="card p-8 rounded-lg text-center">
+                    <i class="fas fa-paint-brush text-4xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-accent mb-4">UI/UX Design</h3>
+                    <p class="light-mode:text-secondary-light">Designing intuitive and visually appealing user interfaces.</p>
+                </div>
+
+                 <!-- Service 2 -->
+                 <div class="card p-8 rounded-lg text-center">
+                    <i class="fas fa-paint-brush text-4xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-accent mb-4">Automation & Web Scraping</h3>
+                    <p class="light-mode:text-secondary-light">Automating repetitive tasks and extracting data using Selenium, Scrapy, and LangChain..</p>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="card p-8 rounded-lg text-center">
+                    <i class="fas fa-mobile-alt text-4xl text-accent mb-4"></i>
+                    <h3 class="text-xl font-semibold text-accent mb-4">Mobile Responsive</h3>
+                    <p class="light-mode:text-secondary-light">Creating websites that work perfectly on all devices.</p>
                 </div>
             </div>
         </div>
     </section>
-    <!-- My projects -->
 
-    <section class="fascilities">
-        <div class="title"><span>My Projects</span></div>
-        <div class="row">
-            <div class="fascilities-col">
-                <a href="https://nisrajvats.github.io/octanet-aug-Landing/">
-                    <img src="Images/web1.png" alt="octanet img">
-                </a>
-                <h3><a href="https://nisrajvats.github.io/octanet-aug-Landing/">OCTANET AUG</a></h3>
+   <!-- Updated Contact Section -->
+<section id="contact" class="py-20">
+    <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center text-accent mb-12 items-center justify-center">Contact Me</h2>
+        <div class="max-w-lg mx-auto">
+            <p class="text-center mb-8 light-mode:text-secondary-light">Have a project in mind? Let's connect!</p>
+            
+            <!-- Updated Form with FormSubmit action -->
+            <form 
+                action="https://formsubmit.co/raiputnishant393@gmail.com" 
+                method="POST"
+                class="space-y-4"
+            >
+                <!-- Add these hidden fields for FormSubmit -->
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://yourwebsite.com/thank-you.html">
+                <input type="hidden" name="_subject" value="New Contact Form Submission">
                 
-                <p>This website, developed during my internship, showcases my growth in web design and development. With a focus on both aesthetic appeal and functionality, it demonstrates how I’ve blended creativity with technical skills. This project offered valuable hands-on experience, allowing me to experiment with innovative design techniques and reinforce my commitment to delivering user-friendly and impactful web solutions.
-                </p>
-            </div>
-            <div class="fascilities-col">
-                <a href="#">
-                    <img src="Images/web3.png" alt="PIXELCUT CLONE">
-                </a>
-                <h3><a href="#">PIXELCUT CLONE</a></h3>
-                
-                
-                <p>This website clone, inspired by Pixelcut, is designed to remove backgrounds from images with ease. Created during my internship, it highlights my skills in web development and user interface design. The project allowed me to apply advanced techniques in image processing and enhance my understanding of practical web solutions. It reflects my commitment to creating efficient, user-friendly tools that streamline everyday tasks.
-                </p>
-            </div>
-            <div class="fascilities-col">
-                <a href="https://nisrajvats.github.io/University-Responsive-web/">
-                    <img src="Images/web2.png" alt="UNIVERSITY">
-                </a>
-                <h3>
-                    <a href="https://nisrajvats.github.io/University-Responsive-web/">UNIVERSITY</a>
-                </h3>
-                
-                
-                <p>This website, developed for my university as my first project, is both highly responsive and visually striking. It showcases my initial foray into web development, combining elegant design with seamless functionality. This project allowed me to apply and refine my skills in creating user-friendly, adaptive websites, reflecting my dedication to delivering a polished and effective online experience.
-                </p>
+                <div>
+                    <input 
+                        type="text" 
+                        name="name"
+                        placeholder="Your Name" 
+                        class="w-full p-3 rounded-lg bg-dark border border-accent focus:outline-none focus:ring-2 focus:ring-accent light-mode:focus:ring-secondary-light"
+                        required
+                    >
+                </div>
+                <div>
+                    <input 
+                        type="email" 
+                        name="email"
+                        placeholder="Your Email" 
+                        class="w-full p-3 rounded-lg bg-dark border border-accent focus:outline-none focus:ring-2 focus:ring-accent light-mode:focus:ring-secondary-light"
+                        required
+                    >
+                </div>
+                <div>
+                    <textarea 
+                        name="message"
+                        placeholder="Your Message" 
+                        rows="5" 
+                        class="w-full p-3 rounded-lg bg-dark border border-accent focus:outline-none focus:ring-2 focus:ring-accent light-mode:focus:ring-secondary-light"
+                        required
+                    ></textarea>
+                </div>
+                <button 
+                    type="submit" 
+                    class="btn-accent w-full py-3 rounded-full border-2 border-accent font-medium"
+                >
+                    Send Message
+                </button>
+            </form>
+            
+            <div class="mt-8 text-center">
+                <p class="mb-2 light-mode:text-secondary-light"><i class="fas fa-envelope text-accent mr-2"></i> raiputnishant393@gmail.com</p>
+                <p class="light-mode:text-secondary-light"><i class="fas fa-phone text-accent mr-2"></i> +91 9518045548</p>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
+   <!-- Footer with different background color -->
+<footer class="bg-red-900 text-white py-6">
+    <div class="container mx-auto px-4 text-center">
+        <p class="mb-4">Created By <a href="#" class="text-teal-300 hover:underline">Nishant Chauhan</a> | © 2025 All Rights Reserved</p>
+        <p class="mb-4"><strong>Languages:</strong> English (Professional), German (Limited), Hindi (Native)</p>
+        <p class="mb-4"><strong>Certifications:</strong> Internship Certificate (OctaNet Services Pvt Ltd.), Saylor Academy Certification (Dec 2021, Credential ID: 43764384)</p>
+        <div class="flex justify-center space-x-4">
+            <a href="https://twitter.com/NisRajVats" class="text-white hover:text-teal-300 transition-colors duration-200"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/nishant-rajput-555834230/" class="text-white hover:text-teal-300 transition-colors duration-200"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/NisRajVats" class="text-white hover:text-teal-300 transition-colors duration-200"><i class="fab fa-github"></i></a>
+            <a href="https://www.youtube.com/@NishantRajputVlogs" class="text-white hover:text-teal-300 transition-colors duration-200"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+</footer>
 
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="fixed bottom-6 right-6 bg-accent text-dark p-3 rounded-full shadow-lg hover:bg-dark hover:text-accent hover:border hover:border-accent transition-all hidden">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-    <!-- My Services Section Start -->
-    <section class="services" id="services">
+    <!-- JavaScript -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
         
-        <div class="content">
-            <div class="title"><span>My Services</span></div>
-            <div class="boxes">
-                <div class="box">
-                    
-                    
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('menu-open');
+            menuBtn.innerHTML = mobileMenu.classList.contains('menu-open') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
 
-                    <div class="icon">
-                        <i class="fas fa-desktop"></i>
-                    </div>
-                    <div class="topic">Custom Web Design</div>
-                    <p>I design and develop custom websites tailored to your brand’s identity and goals. Using HTML, CSS, and the Tailwind Framework, I create visually stunning and responsive websites that ensure a seamless experience across all devices and screen sizes.</p>
-                </div>
-                <div class="box">
-                    <div class="icon">
-                        <i class="fas fa-paint-brush"></i>
-                    </div>
-                    <div class="topic">UI/UX Design</div>
-                    <p>I specialize in crafting intuitive and engaging user interfaces that prioritize both aesthetics and functionality. My focus is on creating user-centric designs that not only look great but also provide an exceptional user experience, making your website easy to navigate and enjoyable to use.</p>
-                </div>
-                <div class="box">
-                    <div class="icon">
-                        <i class="fas fa-chart-line"></i>
-                    </div>
-                    <div class="topic">Cross-Browser Compatibility</div>
-                    <p>Ensure your website delivers a consistent experience across all browsers and devices. I’ll test and optimize your site for cross-browser compatibility, so your content looks and functions perfectly, whether accessed from Chrome, Firefox, Safari, or any other browser.</p>
-                </div>
-                <div class="box">
-                    <div class="icon">
-                        <i class="fab fa-android"></i>
-                    </div>
-                    <div class="topic">Consultation and Strategy</div>
-                    <p>Get expert guidance on web development strategies and technology choices with my consultation services. I’ll help you navigate the best practices and technology stack options to achieve your project goals, offering tailored advice to set you up for success.
-                    </p>
-                </div>
-                <div class="box">
-                    <div class="icon">
-                        <i class="fas fa-camera-retro"></i>
-                    </div>
-                    <div class="topic">Web Application Maintenance</div>
-                    <p>Keep your website running smoothly with my ongoing maintenance services. I provide regular updates, performance checks, and security enhancements to ensure your site remains current, functional, and protected against potential issues.</p>
-                </div>
-                <div class="box">
-                    <div class="icon">
-                        <i class="fas fa-tablet-alt"></i>
-                    </div>
-                    <div class="topic">Website Optimization</div>
-                    <p>Optimize your website’s performance with my comprehensive optimization services. I’ll ensure your site loads quickly, runs efficiently, and provides a smooth experience for users by implementing best practices in responsive design and code optimization.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('menu-open');
+                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
 
-    <!-- Contact Me section Start -->
-    <section class="contact" id="contact">
-        <div class="content">
-            <div class="title"><span>Contact Me</span></div>
-            <div class="text">
-                <div class="topic">Have Any Project?</div>
-                <p>I am always excited to take on new challenges and collaborate on innovative projects. If you are
-                    looking for a passionate and skilled developer to join your team or contribute to your project, I
-                    would love to connect with you. Please feel free to reach out to discuss how we can work together to
-                    achieve your goals.</p>
-                <div class="button">
-                    <a href="https://www.linkedin.com/in/nishantrajput393/">
-                        <button>Let's Chat</button>
-                </div>
-            </div>
-        </div>
-    </section>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-     <!-- Footer (Optional) -->
-     <footer>
-        <div class="text">
-            <span>Created by <a href="https://github.com/NisRajVats" target="_blank">Nishant Rajput</a> | &copy; 2025 All Rights Reserved</span>
-        </div>
-    </footer>
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scroll-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.remove('hidden');
+            } else {
+                scrollTopBtn.classList.add('hidden');
+            }
+        });
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
 
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            localStorage.setItem('lightMode', document.body.classList.contains('light-mode'));
+            darkModeToggle.innerHTML = document.body.classList.contains('light-mode')
+                ? '<i class="fas fa-moon"></i>'
+                : '<i class="fas fa-sun"></i>';
+        });
 
+        // Check for saved light mode preference
+        if (localStorage.getItem('lightMode') === 'true') {
+            document.body.classList.add('light-mode');
+            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
+        } else {
+            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        const carousel = document.querySelector('.project-carousel');
+const container = carousel.querySelector('.flex');
+const originalCards = Array.from(document.querySelectorAll('.project-card'));
+let currentCards = [...originalCards];
+const cardWidth = originalCards[0].offsetWidth;
+const gap = 24;
+const visibleCards = 3; // Number of cards visible at once
+const animationDuration = 1000;
+const pauseDuration = 500;
+
+// Set initial state
+container.innerHTML = '';
+currentCards.forEach(card => container.appendChild(card));
+
+function animateOneCard() {
+    // 1. Slide out leftmost card
+    container.style.transition = `transform ${animationDuration}ms ease-in-out`;
+    container.style.transform = `translateX(-${cardWidth + gap}px)`;
     
+    setTimeout(() => {
+        // 2. Remove the transition and moved card
+        container.style.transition = 'none';
+        const movedCard = container.firstElementChild;
+        container.removeChild(movedCard);
+        
+        // 3. Move the card to end and update array
+        container.appendChild(movedCard);
+        currentCards.push(currentCards.shift());
+        
+        // 4. Reset position
+        container.style.transform = 'translateX(0)';
+        void container.offsetWidth; // Force reflow
+        
+        // 5. Pause before next animation
+        setTimeout(() => {
+            // 6. Check if we've shown all cards
+            if (currentCards[0] === originalCards[0]) {
+                // Full cycle complete - pause longer if needed
+                setTimeout(animateOneCard, 2000);
+            } else {
+                animateOneCard();
+            }
+        }, pauseDuration);
+    }, animationDuration);
+}
 
-    <script src="script.js">
+// Start animation after initial pause
+setTimeout(animateOneCard, 1000);
+
+        // Particles.js configuration
+        particlesJS('particles-js', {
+            particles: {
+                number: { value: 80, density: { enable: true, value_area: 800 } },
+                color: { value: '#00DDEB' },
+                shape: { type: 'circle' },
+                opacity: { value: 0.5, random: true },
+                size: { value: 3, random: true },
+                line_linked: { 
+                    enable: true, 
+                    distance: 150, 
+                    color: '#00DDEB', 
+                    opacity: 0.4, 
+                    width: 1 
+                },
+                move: { 
+                    enable: true, 
+                    speed: 2, 
+                    direction: 'none', 
+                    random: false, 
+                    straight: false, 
+                    out_mode: 'out', 
+                    bounce: false 
+                }
+            },
+            interactivity: {
+                detect_on: 'canvas',
+                events: { 
+                    onhover: { enable: true, mode: 'repulse' }, 
+                    onclick: { enable: true, mode: 'push' }, 
+                    resize: true 
+                },
+                modes: { 
+                    repulse: { distance: 100, duration: 0.4 }, 
+                    push: { particles_nb: 4 } 
+                }
+            },
+            retina_detect: true
+        });
     </script>
 </body>
-
 </html>
