@@ -15,255 +15,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <!-- Particles.js -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    <style>
-        :root {
-            --primary-dark: #1A1A2E;
-            --secondary-dark: #16213E;
-            --accent-teal: #00DDEB;
-            --accent-pink: #FF007A;
-            --text-light: #ffffff;
-            
-            /* Light mode colors */
-            --primary-light: #FFFFFF;
-            --secondary-light: #0A2463; /* Navy blue */
-            --text-dark: #1A1A2E;
-        }
-        
-        body {
-            background: linear-gradient(135deg, var(--primary-dark), var(--secondary-dark));
-            color: var(--text-light);
-            font-family: 'Poppins', sans-serif;
-            transition: all 0.3s ease;
-        }
-        
-        body.light-mode {
-            background: linear-gradient(135deg, var(--primary-light), var(--primary-light));
-            color: var(--text-dark);
-        }
-        
-        /* Text Colors */
-        .text-accent {
-            color: var(--accent-teal);
-        }
-        .light-mode .text-accent {
-            color: var(--secondary-light);
-        }
-        .text-pink {
-            color: var(--accent-pink);
-        }
-        
-        /* Background Colors */
-        .bg-accent {
-            background-color: var(--accent-teal);
-        }
-        .light-mode .bg-accent {
-            background-color: var(--secondary-light);
-        }
-        .bg-pink {
-            background-color: var(--accent-pink);
-        }
-        .bg-dark {
-            background-color: var(--primary-dark);
-        }
-        .light-mode .bg-dark {
-            background-color: var(--primary-light);
-        }
-        
-        /* Borders */
-        .border-accent {
-            border-color: var(--accent-teal);
-        }
-        .light-mode .border-accent {
-            border-color: var(--secondary-light);
-        }
-        .border-pink {
-            border-color: var(--accent-pink);
-        }
-        
-        /* Hover Effects */
-        .hover\:bg-accent:hover {
-            background-color: var(--accent-teal);
-        }
-        .light-mode .hover\:bg-accent:hover {
-            background-color: var(--secondary-light);
-        }
-        .hover\:text-accent:hover {
-            color: var(--accent-teal);
-        }
-        .light-mode .hover\:text-accent:hover {
-            color: var(--secondary-light);
-        }
-        
-        /* Custom Shadows */
-        .shadow-custom {
-            box-shadow: 0 4px 20px rgba(0, 221, 235, 0.2);
-        }
-        .light-mode .shadow-custom {
-            box-shadow: 0 4px 20px rgba(10, 36, 99, 0.2);
-        }
-        .shadow-pink {
-            box-shadow: 0 4px 20px rgba(255, 0, 122, 0.2);
-        }
-        
-        /* Hero Section */
-        #hero {
-            background: linear-gradient(135deg, rgba(26, 26, 46, 0.9), rgba(22, 33, 62, 0.9));
-            position: relative;
-            overflow: hidden;
-        }
-        .light-mode #hero {
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9));
-        }
-        
-        /* Code Block Styling */
-        .code-block {
-            background: rgba(26, 26, 46, 0.8);
-            border-left: 4px solid var(--accent-teal);
-            border-radius: 0 8px 8px 0;
-        }
-        .light-mode .code-block {
-            background: rgba(255, 255, 255, 0.9);
-            border-left: 4px solid var(--secondary-light);
-        }
-        .code-block .keyword {
-            color: #FF79C6;
-        }
-        .code-block .string {
-            color: #FF6F61;
-        }
-        .code-block .boolean {
-            color: #F1FA8C;
-        }
-        .code-block .operator {
-            color: var(--text-light);
-        }
-        .light-mode .code-block .operator {
-            color: var(--text-dark);
-        }
-        
-        /* Button Styles */
-        .btn-accent {
-            background: var(--accent-teal);
-            color: var(--primary-dark);
-            transition: all 0.3s ease;
-        }
-        .light-mode .btn-accent {
-            background: var(--secondary-light);
-            color: var(--primary-light);
-        }
-        .btn-accent:hover {
-            background: transparent;
-            color: var(--accent-teal);
-            border-color: var(--accent-teal);
-        }
-        .light-mode .btn-accent:hover {
-            color: var(--secondary-light);
-            border-color: var(--secondary-light);
-        }
-        .btn-pink {
-            background: var(--accent-pink);
-            color: white;
-            transition: all 0.3s ease;
-        }
-        .btn-pink:hover {
-            background: transparent;
-            color: var(--accent-pink);
-            border-color: var(--accent-pink);
-        }
-        
-        /* Card Styles */
-        .card {
-            background: rgba(26, 26, 46, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 221, 235, 0.2);
-            transition: all 0.3s ease;
-        }
-        .light-mode .card {
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(10, 36, 99, 0.2);
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 221, 235, 0.3);
-            border-color: var(--accent-teal);
-        }
-        .light-mode .card:hover {
-            box-shadow: 0 10px 25px rgba(10, 36, 99, 0.3);
-            border-color: var(--secondary-light);
-        }
-        
-        /* Navigation */
-        nav {
-            backdrop-filter: blur(10px);
-            background: rgba(26, 26, 46, 0.8);
-        }
-        .light-mode nav {
-            background: rgba(255, 255, 255, 0.9);
-        }
-        
-        /* Mobile Menu */
-        #mobile-menu {
-            display: none;
-            backdrop-filter: blur(10px);
-        }
-        .light-mode #mobile-menu {
-            background: rgba(255, 255, 255, 0.95);
-        }
-        #mobile-menu.menu-open {
-            display: block;
-        }
-        
-        /* Section Headings */
-        .section-heading {
-            position: relative;
-            display: inline-block;
-        }
-        .section-heading:after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 50%;
-            height: 3px;
-            background: var(--accent-teal);
-        }
-        .light-mode .section-heading:after {
-            background: var(--secondary-light);
-        }
-        
-        /* Project Carousel */
-        .project-card.highlighted {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(0, 221, 235, 0.5);
-        }
-        .light-mode .project-card.highlighted {
-            box-shadow: 0 0 25px rgba(10, 36, 99, 0.4);
-        }
-        
-        /* Contact Form */
-        .light-mode input,
-        .light-mode textarea {
-            background: rgba(255, 255, 255, 0.9);
-            border-color: rgba(10, 36, 99, 0.3);
-            color: var(--text-dark);
-        }
-        
-        /* Footer */
-        .light-mode footer {
-            background: var(--secondary-light);
-            color: white;
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .code-block {
-                margin-top: 2rem;
-            }
-            .section-heading:after {
-                width: 30%;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="antialiased">
     <!-- Navigation -->
@@ -300,61 +52,58 @@
         </ul>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative" id="hero">
-        <div id="particles-js" class="absolute inset-0"></div>
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10 py-20">
-            <!-- Left Content -->
-            <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
-                <h1 class="text-4xl md:text-5xl font-bold mb-4 light-mode:text-secondary-light">NISHANT CHAUHAN</h1>
-                <div class="space-y-4 mb-8">
-                    <p class="text-xl md:text-2xl light-mode:text-secondary-light">Hello,</p>
-                    <p class="text-xl md:text-2xl light-mode:text-secondary-light">This is Nishant Chauhan,</p>
-                    <p class="text-xl md:text-2xl text-accent">I'm a Professional Software Developer.</p>
-                </div>
-                
-                
-                <!-- Buttons -->
-                <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
-                    <a href="#contact" class="btn-accent px-6 py-3 rounded-full border-2 border-accent font-medium">
-                        CONTACT ME <i class="fas fa-paper-plane ml-2"></i>
-                    </a>
-                    <a href="Images/Updated Nishant Resume.pdf" target="_blank" class="btn-pink px-6 py-3 rounded-full border-2 border-pink font-medium">
-                        GET RESUME <i class="fas fa-download ml-2"></i>
-                    </a>
-                </div>
-                
-                
+   <!-- Hero Section -->
+<section id="home" class="min-h-screen flex items-center justify-center relative">
+    <div id="particles-js" class="absolute inset-0"></div>
+    <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between relative z-10 py-20">
+        <!-- Left Content -->
+        <div class="md:w-1/2 mb-10 md:mb-0 text-center md:text-left">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 light-mode:text-secondary-light font-sans antialiased">NISHANT CHAUHAN</h1>
+            <div class="space-y-4 mb-8">
+                <p class="text-xl md:text-2xl light-mode:text-secondary-light font-sans antialiased">Hello,</p>
+                <p class="text-xl md:text-2xl light-mode:text-secondary-light font-sans antialiased">This is Nishant Chauhan,</p>
+                <p class="text-xl md:text-2xl text-accent font-sans antialiased">I'm a Professional Software Developer.</p>
             </div>
             
-            <!-- Right Content - Code Block -->
-            <div class="md:w-1/2">
-                <div class="code-block p-6 max-w-md mx-auto md:mx-0 md:ml-auto">
-                    <div class="dots flex gap-2 mb-4">
-                        <span class="w-3 h-3 rounded-full bg-red-500"></span>
-                        <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
-                        <span class="w-3 h-3 rounded-full bg-green-500"></span>
-                    </div>
-                    <pre class="overflow-x-auto text-sm md:text-base">
-<span class="keyword">const</span> coder = {
-    name: <span class="string">"Nishant Chauhan"</span>,
-    skills: [<span class="string">"React"</span>, <span class="string">"Next.js"</span>, <span class="string">"Redux"</span>, 
-             <span class="string">"Express"</span>, <span class="string">"NestJS"</span>, <span class="string">"MySQL"</span>,
-             <span class="string">"MongoDB"</span>, <span class="string">"Docker"</span>],
-    quickLearner: <span class="boolean">true</span>,
-    problemSolver: <span class="boolean">true</span>,
-    hireable: <span class="keyword">function</span>() {
-        <span class="keyword">return</span> (
-            this.hardWorker <span class="operator">&&</span>
-            this.problemSolver <span class="operator">&&</span>
-            this.skills.length <span class="operator">>=</span> 5
+            <!-- Buttons -->
+            <div class="flex flex-wrap justify-center md:justify-start gap-4 mb-8">
+                <a href="#contact" class="btn-accent px-6 py-3 rounded-full border-2 border-accent font-medium font-sans">
+                    CONTACT ME <i class="fas fa-paper-plane ml-2"></i>
+                </a>
+                <a href="Images/Updated Nishant Resume.pdf" target="_blank" class="btn-pink px-6 py-3 rounded-full border-2 border-pink font-medium font-sans">
+                    GET RESUME <i class="fas fa-download ml-2"></i>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Right Content - Code Block -->
+        <div class="md:w-1/2">
+            <div class="code-block p-6 max-w-md mx-auto md:mx-0 md:ml-auto bg-gray-800 rounded-lg">
+                <div class="dots flex gap-2 mb-4">
+                    <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                    <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                    <span class="w-3 h-3 rounded-full bg-green-500"></span>
+                </div>
+                <pre class="overflow-x-auto text-sm md:text-base font-mono text-gray-100">
+<span class="text-blue-400">const</span> coder = {
+    name: <span class="text-green-400">"Nishant Chauhan"</span>,
+    skills: [<span class="text-green-400">"React"</span>, <span class="text-green-400">"Next.js"</span>, <span class="text-green-400">"Redux"</span>, 
+             <span class="text-green-400">"Express"</span>, <span class="text-green-400">"NestJS"</span>, <span class="text-green-400">"MySQL"</span>,
+             <span class="text-green-400">"MongoDB"</span>, <span class="text-green-400">"Docker"</span>],
+    quickLearner: <span class="text-purple-400">true</span>,
+    problemSolver: <span class="text-purple-400">true</span>,
+    hireable: <span class="text-blue-400">function</span>() {
+        <span class="text-blue-400">return</span> (
+            this.hardWorker <span class="text-yellow-400">&amp;&amp;</span>
+            this.problemSolver <span class="text-yellow-400">&amp;&amp;</span>
+            this.skills.length <span class="text-yellow-400">&gt;=</span> 5
         );
     }
 };</pre>
-                </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- About Section -->
     <section id="about" class="py-20">
@@ -429,7 +178,7 @@
                 <div class="flex gap-6">
                     <!-- Project 1 -->
                     <div class="project-card p-6 rounded-lg flex-shrink-0 w-80 md:w-96">
-                        <img src="Images/Screenshot 2025-03-17 235329.png" alt="AI-Powered Resume Optimizer" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <img src="Images/PixelPerfect.png" alt="AI-Powered Resume Optimizer" class="w-full h-48 object-cover rounded-lg mb-4">
                         <div>
                             <h3 class="text-xl font-semibold text-accent mb-2">AI-Powered Resume Optimizer</h3>
                             <p class="mb-4 light-mode:text-secondary-light">A full-stack AI-driven platform that optimizes resumes and auto-applies for jobs. Improved ATS scores by 40%.</p>
@@ -460,6 +209,48 @@
                     <!-- Project 4 -->
                     <div class="project-card p-6 rounded-lg flex-shrink-0 w-80 md:w-96">
                         <img src="Images/portfolio.png" alt="Portfolio Website" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">Portfolio Website</h3>
+                            <p class="mb-4 light-mode:text-secondary-light">A portfolio website showcasing my skills and projects.</p>
+                            <a href="https://nisrajvats.github.io/Portfolio/" class="text-accent hover:underline">View Project →</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 5 -->
+                    <div class="project-card p-6 rounded-lg flex-shrink-0 w-80 md:w-96">
+                        <img src="Images/Resugit me.png" alt="Portfolio Website" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">Portfolio Website</h3>
+                            <p class="mb-4 light-mode:text-secondary-light">A portfolio website showcasing my skills and projects.</p>
+                            <a href="https://nisrajvats.github.io/Portfolio/" class="text-accent hover:underline">View Project →</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Project 6 -->
+                    <div class="project-card p-6 rounded-lg flex-shrink-0 w-80 md:w-96">
+                        <img src="Images/Augment.png" alt="Portfolio Website" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">Portfolio Website</h3>
+                            <p class="mb-4 light-mode:text-secondary-light">A portfolio website showcasing my skills and projects.</p>
+                            <a href="https://nisrajvats.github.io/Portfolio/" class="text-accent hover:underline">View Project →</a>
+                        </div>
+                    </div>
+
+
+                    <!-- Project 7 -->
+                    <div class="project-card p-6 rounded-lg flex-shrink-0 w-80 md:w-96">
+                        <img src="Images/Careerboost.png" alt="Portfolio Website" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <div>
+                            <h3 class="text-xl font-semibold text-accent mb-2">Portfolio Website</h3>
+                            <p class="mb-4 light-mode:text-secondary-light">A portfolio website showcasing my skills and projects.</p>
+                            <a href="https://nisrajvats.github.io/Portfolio/" class="text-accent hover:underline">View Project →</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 8 -->
+                    <div class="project-card p-6 rounded-lg flex-shrink-0 w-80 md:w-96">
+                        <img src="Images/ToDO.png" alt="Portfolio Website" class="w-full h-48 object-cover rounded-lg mb-4">
                         <div>
                             <h3 class="text-xl font-semibold text-accent mb-2">Portfolio Website</h3>
                             <p class="mb-4 light-mode:text-secondary-light">A portfolio website showcasing my skills and projects.</p>
@@ -520,6 +311,8 @@
             </div>
         </div>
     </section>
+
+    
 
    <!-- Updated Contact Section -->
 <section id="contact" class="py-20">
@@ -602,159 +395,11 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <!-- JavaScript -->
-    <script>
-        // Mobile Menu Toggle
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('menu-open');
-            menuBtn.innerHTML = mobileMenu.classList.contains('menu-open') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-
-        // Close mobile menu when clicking a link
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('menu-open');
-                menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
-        // Scroll to top button
-        const scrollTopBtn = document.getElementById('scroll-top');
-        window.addEventListener('scroll', () => {
-            if (window.pageYOffset > 300) {
-                scrollTopBtn.classList.remove('hidden');
-            } else {
-                scrollTopBtn.classList.add('hidden');
-            }
-        });
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        });
-
-        // Dark mode toggle
-        const darkModeToggle = document.getElementById('dark-mode-toggle');
-        darkModeToggle.addEventListener('click', () => {
-            document.body.classList.toggle('light-mode');
-            localStorage.setItem('lightMode', document.body.classList.contains('light-mode'));
-            darkModeToggle.innerHTML = document.body.classList.contains('light-mode')
-                ? '<i class="fas fa-moon"></i>'
-                : '<i class="fas fa-sun"></i>';
-        });
-
-        // Check for saved light mode preference
-        if (localStorage.getItem('lightMode') === 'true') {
-            document.body.classList.add('light-mode');
-            darkModeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        } else {
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-
-        const carousel = document.querySelector('.project-carousel');
-const container = carousel.querySelector('.flex');
-const originalCards = Array.from(document.querySelectorAll('.project-card'));
-let currentCards = [...originalCards];
-const cardWidth = originalCards[0].offsetWidth;
-const gap = 24;
-const visibleCards = 3; // Number of cards visible at once
-const animationDuration = 1000;
-const pauseDuration = 500;
-
-// Set initial state
-container.innerHTML = '';
-currentCards.forEach(card => container.appendChild(card));
-
-function animateOneCard() {
-    // 1. Slide out leftmost card
-    container.style.transition = `transform ${animationDuration}ms ease-in-out`;
-    container.style.transform = `translateX(-${cardWidth + gap}px)`;
-    
-    setTimeout(() => {
-        // 2. Remove the transition and moved card
-        container.style.transition = 'none';
-        const movedCard = container.firstElementChild;
-        container.removeChild(movedCard);
-        
-        // 3. Move the card to end and update array
-        container.appendChild(movedCard);
-        currentCards.push(currentCards.shift());
-        
-        // 4. Reset position
-        container.style.transform = 'translateX(0)';
-        void container.offsetWidth; // Force reflow
-        
-        // 5. Pause before next animation
-        setTimeout(() => {
-            // 6. Check if we've shown all cards
-            if (currentCards[0] === originalCards[0]) {
-                // Full cycle complete - pause longer if needed
-                setTimeout(animateOneCard, 2000);
-            } else {
-                animateOneCard();
-            }
-        }, pauseDuration);
-    }, animationDuration);
-}
-
-// Start animation after initial pause
-setTimeout(animateOneCard, 1000);
-
-        // Particles.js configuration
-        particlesJS('particles-js', {
-            particles: {
-                number: { value: 80, density: { enable: true, value_area: 800 } },
-                color: { value: '#00DDEB' },
-                shape: { type: 'circle' },
-                opacity: { value: 0.5, random: true },
-                size: { value: 3, random: true },
-                line_linked: { 
-                    enable: true, 
-                    distance: 150, 
-                    color: '#00DDEB', 
-                    opacity: 0.4, 
-                    width: 1 
-                },
-                move: { 
-                    enable: true, 
-                    speed: 2, 
-                    direction: 'none', 
-                    random: false, 
-                    straight: false, 
-                    out_mode: 'out', 
-                    bounce: false 
-                }
-            },
-            interactivity: {
-                detect_on: 'canvas',
-                events: { 
-                    onhover: { enable: true, mode: 'repulse' }, 
-                    onclick: { enable: true, mode: 'push' }, 
-                    resize: true 
-                },
-                modes: { 
-                    repulse: { distance: 100, duration: 0.4 }, 
-                    push: { particles_nb: 4 } 
-                }
-            },
-            retina_detect: true
-        });
-    </script>
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tailwindcss@2.2/dist/tailwind.min.css"></script>
+    <script src="script.js"></script>
+</body>
+</html>
 </body>
 </html>
